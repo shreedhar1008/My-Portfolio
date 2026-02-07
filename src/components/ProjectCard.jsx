@@ -1,0 +1,75 @@
+import React, { useRef } from 'react';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+
+const ProjectCard = ({ title, description, tags, link }) => {
+    const x = useMotionValue(0);
+    const y = useMotionValue(0);
+
+    const mouseXSpring = useSpring(x);
+    const mouseYSpring = useSpring(y);
+
+    const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["17.5deg", "-17.5deg"]);
+    const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-17.5deg", "17.5deg"]);
+
+    const handleMouseMove = (e) => {
+        const rect = e.target.getBoundingClientRect();
+        const width = rect.width;
+        const height = rect.height;
+        const mouseX = e.clientX - rect.left;
+        const mouseY = e.clientY - rect.top;
+        const xPct = mouseX / width - 0.5;
+        const yPct = mouseY / height - 0.5;
+        x.set(xPct);
+        y.set(yPct);
+    };
+
+    const handleMouseLeave = () => {
+        x.set(0);
+        y.set(0);
+    };
+
+    return (
+        <motion.div
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            style={{
+                rotateY,
+                rotateX,
+                transformStyle: "preserve-3d",
+            }}
+            className="relative w-full min-h-[450px] h-auto rounded-xl bg-glass border border-white/10 p-8 cursor-pointer group perspective-1000"
+        >
+            <div style={{ transform: "translateZ(75px)", transformStyle: "preserve-3d" }} className="h-full flex flex-col">
+                <h3 className="text-3xl font-heading font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-secondary to-white group-hover:from-white group-hover:to-secondary transition-all">
+                    {title}
+                </h3>
+                <p className="text-gray-300 mb-6 flex-grow leading-relaxed">
+                    {description}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mb-6">
+                    {tags.map((tag) => (
+                        <span key={tag} className="px-3 py-1 text-xs font-semibold bg-primary/20 text-primary border border-primary/30 rounded-full">
+                            {tag}
+                        </span>
+                    ))}
+                </div>
+
+                <div className="flex items-center gap-4 mt-auto">
+                    <button className="flex items-center gap-2 text-white hover:text-secondary transition-colors">
+                        <FaGithub size={20} /> Code
+                    </button>
+                    <button className="flex items-center gap-2 text-white hover:text-secondary transition-colors">
+                        <FaExternalLinkAlt size={18} /> Demo
+                    </button>
+                </div>
+            </div>
+
+            {/* Glow effect handled by CSS via group-hover or just static subtle glow */}
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl" />
+        </motion.div>
+    );
+};
+
+export default ProjectCard;
