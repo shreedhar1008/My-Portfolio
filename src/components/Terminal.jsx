@@ -51,7 +51,7 @@ const Terminal = () => {
 
     return (
         <motion.div
-            className="w-full max-w-2xl h-[500px] bg-black/80 backdrop-blur-md rounded-lg border border-primary/30 shadow-[0_0_30px_rgba(108,99,255,0.2)] overflow-hidden font-mono text-base flex flex-col"
+            className="w-full max-w-2xl h-[400px] md:h-[500px] bg-black/80 backdrop-blur-md rounded-lg border border-primary/30 shadow-[0_0_30px_rgba(108,99,255,0.2)] overflow-hidden font-mono text-sm md:text-base flex flex-col"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}

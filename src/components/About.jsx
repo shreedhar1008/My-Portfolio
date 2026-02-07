@@ -9,9 +9,9 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="max-w-4xl mx-auto glass-card p-10 rounded-2xl border-l-4 border-secondary"
+                className="max-w-4xl mx-auto glass-card p-6 md:p-10 rounded-2xl border-l-4 border-secondary"
             >
-                <h2 className="text-3xl font-heading font-bold mb-6 text-white">
+                <h2 className="text-2xl md:text-3xl font-heading font-bold mb-6 text-white">
                     About <span className="text-gradient">Me</span>
                 </h2>
 

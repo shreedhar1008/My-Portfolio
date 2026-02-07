@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-scroll';
+import { HiMenu, HiX } from 'react-icons/hi';
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -12,6 +14,8 @@ const Navbar = () => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    const navItems = ['About', 'Journey', 'Projects', 'Achievements', 'Contact'];
 
     return (
         <motion.nav
@@ -23,14 +27,15 @@ const Navbar = () => {
         >
             <div className="container mx-auto px-4 flex justify-between items-center">
                 <div className="flex items-center gap-4 cursor-pointer">
-                    <img src="/profile.jpg" alt="Profile" className="w-16 h-16 rounded-full border-2 border-primary object-cover" />
-                    <div className="text-3xl font-bold font-heading text-white tracking-widest uppercase">
+                    <img src="/profile.jpg" alt="Profile" className="w-12 h-12 md:w-16 md:h-16 rounded-full border-2 border-primary object-cover" />
+                    <div className="text-2xl md:text-3xl font-bold font-heading text-white tracking-widest uppercase">
                         <span className="text-secondary">श्रीಧR</span>_S
                     </div>
                 </div>
 
-                <ul className="flex space-x-8">
-                    {['About', 'Journey', 'Projects', 'Achievements', 'Contact'].map((item) => (
+                {/* Desktop Menu */}
+                <ul className="hidden md:flex space-x-8">
+                    {navItems.map((item) => (
                         <li key={item}>
                             <Link
                                 to={item.toLowerCase()}
@@ -43,7 +48,45 @@ const Navbar = () => {
                         </li>
                     ))}
                 </ul>
+
+                {/* Mobile Menu Toggle */}
+                <div className="md:hidden">
+                    <button
+                        onClick={() => setIsOpen(!isOpen)}
+                        className="text-white p-2 focus:outline-none"
+                    >
+                        {isOpen ? <HiX size={28} /> : <HiMenu size={28} />}
+                    </button>
+                </div>
             </div>
+
+            {/* Mobile Menu */}
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="md:hidden bg-dark/95 backdrop-blur-lg border-b border-white/10"
+                    >
+                        <ul className="flex flex-col items-center py-6 space-y-6">
+                            {navItems.map((item) => (
+                                <li key={item}>
+                                    <Link
+                                        to={item.toLowerCase()}
+                                        smooth={true}
+                                        duration={500}
+                                        onClick={() => setIsOpen(false)}
+                                        className="text-xl text-gray-300 hover:text-secondary cursor-pointer transition-colors duration-300 font-medium"
+                                    >
+                                        {item}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </motion.nav>
     );
 };

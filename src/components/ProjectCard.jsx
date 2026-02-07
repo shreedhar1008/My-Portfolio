@@ -38,13 +38,13 @@ const ProjectCard = ({ title, description, tags, link }) => {
                 rotateX,
                 transformStyle: "preserve-3d",
             }}
-            className="relative w-full min-h-[450px] h-auto rounded-xl bg-glass border border-white/10 p-8 cursor-pointer group perspective-1000"
+            className="relative w-full min-h-[400px] md:min-h-[450px] h-auto rounded-xl bg-glass border border-white/10 p-6 md:p-8 cursor-pointer group perspective-1000"
         >
             <div style={{ transform: "translateZ(75px)", transformStyle: "preserve-3d" }} className="h-full flex flex-col">
-                <h3 className="text-3xl font-heading font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-secondary to-white group-hover:from-white group-hover:to-secondary transition-all">
+                <h3 className="text-2xl md:text-3xl font-heading font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-secondary to-white group-hover:from-white group-hover:to-secondary transition-all">
                     {title}
                 </h3>
-                <p className="text-gray-300 mb-6 flex-grow leading-relaxed">
+                <p className="text-gray-300 mb-6 flex-grow leading-relaxed text-sm md:text-base">
                     {description}
                 </p>
 

@@ -38,7 +38,7 @@ const Achievements = () => {
                         <motion.div
                             key={index}
                             whileHover={{ scale: 1.05 }}
-                            className="glass-card p-8 rounded-xl flex items-start gap-6 hover:border-secondary/50 transition-colors"
+                            className="glass-card p-6 md:p-8 rounded-xl flex flex-col sm:flex-row items-start gap-6 hover:border-secondary/50 transition-colors"
                         >
                             <div className="p-4 bg-white/5 rounded-full border border-white/10">
                                 {item.icon}

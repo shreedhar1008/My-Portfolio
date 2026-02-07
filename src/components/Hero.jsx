@@ -11,19 +11,19 @@ const Hero = () => {
             <div className="container mx-auto px-4 z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 
                 {/* Left Content */}
-                <div className="text-left">
+                <div className="text-left py-10 md:py-0">
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 1 }}
                     >
-                        <h1 className="text-4xl md:text-6xl font-bold font-heading mb-6 tracking-tight">
+                        <h1 className="text-3xl md:text-6xl font-bold font-heading mb-6 tracking-tight">
                             Hi, I'm <br />
                             <span className="text-gradient">Shreedhar Shiragur</span>
                         </h1>
                     </motion.div>
 
-                    <div className="text-2xl md:text-3xl font-light text-gray-300 mb-6 h-16 flex items-center">
+                    <div className="text-xl md:text-3xl font-light text-gray-300 mb-6 h-16 flex items-center">
                         <TypeAnimation
                             sequence={[
                                 'CS Engineer',
@@ -41,7 +41,7 @@ const Hero = () => {
                     </div>
 
                     <motion.p
-                        className="text-gray-400 max-w-lg text-lg leading-relaxed mb-8"
+                        className="text-gray-400 max-w-lg text-base md:text-lg leading-relaxed mb-8"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.5, duration: 0.8 }}
@@ -59,7 +59,7 @@ const Hero = () => {
                             to="projects"
                             smooth={true}
                             duration={500}
-                            className="px-8 py-3 bg-gradient-to-r from-primary to-secondary rounded-full font-bold text-black hover:scale-105 transition-transform duration-300 shadow-[0_0_20px_rgba(108,99,255,0.5)] cursor-pointer"
+                            className="px-6 md:px-8 py-3 bg-gradient-to-r from-primary to-secondary rounded-full font-bold text-black hover:scale-105 transition-transform duration-300 shadow-[0_0_20px_rgba(108,99,255,0.5)] cursor-pointer"
                         >
                             View Work
                         </Link>
@@ -67,7 +67,7 @@ const Hero = () => {
                 </div>
 
                 {/* Right Content - Terminal */}
-                <div className="flex justify-center lg:justify-end">
+                <div className="flex justify-center lg:justify-end w-full">
                     <Terminal />
                 </div>
 
