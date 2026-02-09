@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
+import { FaEnvelope, FaLinkedin, FaGithub, FaMobile } from 'react-icons/fa';
 
 const Contact = () => {
     return (
@@ -22,21 +22,21 @@ const Contact = () => {
                 </p>
 
                 <div className="flex justify-center gap-8 mb-12">
-                    <a href="mailto:shreedhar@example.com" className="text-white hover:text-secondary transition-colors text-3xl">
+                    <a href="mailto:shreedharshiragur@gmail.com" className="text-white hover:text-secondary transition-colors text-3xl">
                         <FaEnvelope />
                     </a>
-                    <a href="#" className="text-white hover:text-primary transition-colors text-3xl">
+                    <a href="https://www.linkedin.com/in/shreedhar-shiragur-0a8926291" className="text-white hover:text-primary transition-colors text-3xl">
                         <FaLinkedin />
                     </a>
-                    <a href="#" className="text-white hover:text-white/80 transition-colors text-3xl">
+                    <a href="https://github.com/shreedhar1008" className="text-white hover:text-white/80 transition-colors text-3xl">
                         <FaGithub />
                     </a>
-                    <a href="#" className="text-white hover:text-blue-400 transition-colors text-3xl">
-                        <FaTwitter />
+                    <a href="tel:+919019981312" className="text-white hover:text-blue-400 transition-colors text-3xl">
+                        <FaMobile />
                     </a>
                 </div>
 
-                <a href="mailto:shreedhar@example.com" className="inline-block px-10 py-4 bg-white/5 border border-white/10 rounded-full font-bold text-white hover:bg-white/10 transition-all hover:scale-105">
+                <a href="mailto:shreedharshiragur@gmail.com" className="inline-block px-10 py-4 bg-white/5 border border-white/10 rounded-full font-bold text-white hover:bg-white/10 transition-all hover:scale-105">
                     Say Hello
                 </a>
             </motion.div>
