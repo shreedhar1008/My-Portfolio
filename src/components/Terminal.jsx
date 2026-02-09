@@ -17,11 +17,11 @@ const Terminal = () => {
     ]);
     const [input, setInput] = useState('');
     const inputRef = useRef(null);
-    const bottomRef = useRef(null);
+    const scrollRef = useRef(null);
 
     useEffect(() => {
-        if (bottomRef.current) {
-            bottomRef.current.scrollIntoView({ behavior: 'smooth' });
+        if (scrollRef.current) {
+            scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
         }
     }, [history]);
 
@@ -64,6 +64,7 @@ const Terminal = () => {
             </div>
 
             <div
+                ref={scrollRef}
                 className="flex-1 p-4 overflow-y-auto custom-scrollbar"
                 onClick={() => inputRef.current?.focus()}
             >
@@ -87,10 +88,8 @@ const Terminal = () => {
                         onChange={(e) => setInput(e.target.value)}
                         onKeyDown={handleKeyDown}
                         className="bg-transparent border-none outline-none flex-1 font-mono text-white caret-primary"
-                        autoFocus
                     />
                 </div>
-                <div ref={bottomRef} />
             </div>
         </motion.div>
     );
