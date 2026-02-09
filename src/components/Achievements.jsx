@@ -15,7 +15,13 @@ const Achievements = () => {
             description: "Achieved 5-star rating in Problem Solving and Python. Top percentile in algorithms.",
             icon: <FaCode className="text-4xl text-primary" />,
             link: "https://www.hackerrank.com/..."
-        }
+        },
+        {
+            title: "Google Cloud Arcade Novice",
+            description: "Earned the Arcade Novice badge by completing hands-on Google Cloud labs and skill-based challenges, demonstrating foundational cloud computing and GCP service knowledge.",
+            icon: <FaCloud className="text-4xl text-primary" />,
+            link: "https://www.cloudskillsboost.google/public_profiles/your-profile-id"
+        },
     ];
 
     return (
