@@ -5,21 +5,31 @@ import { FaGraduationCap, FaBriefcase } from 'react-icons/fa';
 const Journey = () => {
     const experiences = [
         {
+            title: "Virtual Intern – Android App Development (GenAI)",
+            institution: "MindMatrix",
+            location: "Remote",
+            period: "Feb 2026 - May 2026",
+            description: "Currently working as a Virtual Intern on Android app development using Generative AI, focusing on AI-assisted development workflows, app design, and intelligent feature integration.",
+            type: "internship",
+            icon: <FaBriefcase />,
+            tags: ["Virtual Internship", "Android Development", "Generative AI"]
+        },
+        {
             title: "Virtual Intern",
             institution: "Infosys Springboard",
             location: "Remote",
-            period: "Nov 2025 - Present",
-            description: "Built a real-time hand gesture-based volume control system using Python, OpenCV, and MediaPipe for touchless audio control. Implemented hand landmark detection and gesture interpretation by mapping fingertip distance to system volume levels.",
+            period: "Nov 2025 - Jan 2026",
+            description: "Built an AI-based system that predicts student dropout risk and recommends personalized study habits by analyzing academic and behavioral data using machine learning techniques.",
             type: "internship",
             icon: <FaBriefcase />,
-            tags: ["Virtual Internship"]
+            tags: ["Virtual Internship", "Python Technology Stack", "Backend Development", "Machine Learning", "Web development"]
         },
         {
             title: "Bachelor of Engineering",
             institution: "East West Institute of Technology",
             location: "Bengaluru, Karnataka",
             period: "2022 - 2026",
-            description: "Computer Science and Engineering. Current CGPA: 8.02/10 (till 6th sem). Focused on strong fundamentals in Data Structures, Algorithms, DBMS, and AI/ML.",
+            description: "Computer Science and Engineering. Current CGPA: 8.00/10 (till 7th sem). Focused on strong fundamentals in Data Structures, Algorithms, DBMS, and AI/ML.",
             type: "education",
             icon: <FaGraduationCap />,
             tags: ["B.E. (CSE)"]
