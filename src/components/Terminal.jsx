@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 const commands = {
     help: "Available commands: help, about, skills, projects, contact, clear",
     about: "Shreedhar Shiragur - CS Engineer specializing in AI/ML and Cloud Computing. Passionate about building intelligent systems.",
-    skills: "Python, TensorFlow, React, Google Cloud, Docker, Kubernetes, SQL/NoSQL",
-    projects: "1. Fruit Classification (CNN) - High accuracy fruit recognition.\n2. DeepFake Detection - AI security system.",
+    skills: "Python-centric full-stack & ML developer | DSA, DBMS, OS | Flask & React.js | NumPy, Pandas, Matplotlib, Scikit-learn, TensorFlow, PyTorch | SQL (MySQL), MongoDB, Firebase | Git, VS Code, Jupyter | Linux & Windows | GCP & AWS",
+    projects: "1. Fruit Classification (CNN) - High accuracy fruit recognition.\n2. DeepFake Detection - AI security system.\n3. StudyTrack - Student performance tracking with dropout prediction system and provides personalized study habit recommendations using machine learning.",
     contact: "Email: shreedharshiragur@gmail.com\nLinkedIn: linkedin.com/in/shreedhar\nGitHub: github.com/shreedhar",
     clear: "CLEAR"
 };
