@@ -36,7 +36,12 @@ const Contact = () => {
                     </a>
                 </div>
 
-                <a href="mailto:shreedharshiragur@gmail.com" className="inline-block px-10 py-4 bg-white/5 border border-white/10 rounded-full font-bold text-white hover:bg-white/10 transition-all hover:scale-105">
+                <a
+                    href="https://wa.me/919019981312"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block px-10 py-4 bg-white/5 border border-white/10 rounded-full font-bold text-white hover:bg-white/10 transition-all hover:scale-105"
+                >
                     Say Hello
                 </a>
             </motion.div>
