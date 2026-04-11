@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
-const ProjectCard = ({ title, description, tags, link }) => {
+const ProjectCard = ({ title, description, tags, link, demo }) => {
     const x = useMotionValue(0);
     const y = useMotionValue(0);
 
@@ -57,12 +57,14 @@ const ProjectCard = ({ title, description, tags, link }) => {
                 </div>
 
                 <div className="flex items-center gap-4 mt-auto">
-                    <button className="flex items-center gap-2 text-white hover:text-secondary transition-colors">
+                    <a href={link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white hover:text-secondary transition-colors">
                         <FaGithub size={20} /> Code
-                    </button>
-                    <button className="flex items-center gap-2 text-white hover:text-secondary transition-colors">
-                        <FaExternalLinkAlt size={18} /> Demo
-                    </button>
+                    </a>
+                    {demo && (
+                        <a href={demo} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white hover:text-secondary transition-colors">
+                            <FaExternalLinkAlt size={18} /> Demo
+                        </a>
+                    )}
                 </div>
             </div>
 
