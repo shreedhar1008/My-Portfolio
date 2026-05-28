@@ -19,7 +19,7 @@ const Journey = () => {
             title: "Bachelor of Engineering (CSE)",
             institution: "EWIT, Bengaluru",
             period: "2022 - 2026",
-            description: "CGPA: 8.00/10. Focused on strong fundamentals in DSA, DBMS, and AI/ML."
+            description: "CGPA: 8.12/10. Focused on strong fundamentals in DSA, DBMS, and AI/ML."
         },
         {
             title: "PUC (PCMB)",
