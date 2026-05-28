@@ -13,16 +13,16 @@ function App() {
         <div className="relative min-h-screen">
             <ParticleBackground />
             <Navbar />
-            <main className="container mx-auto px-4 pt-20 md:pt-14 space-y-4">
+            <main>
                 <Hero />
                 <About />
-                <Journey />
                 <Projects />
+                <Journey />
                 <Achievements />
                 <Contact />
             </main>
-            <footer className="text-center py-8 text-gray-500 text-sm border-t border-white/5 bg-black/20 backdrop-blur-sm">
-                <p>&copy; {new Date().getFullYear()} Shreedhar Shiragur. All Rights Reserved.</p>
+            <footer className="text-center py-8 text-gray-500 text-sm border-t border-white/5">
+                <p>Designed & Built by Shreedhar Shiragur. All rights reserved.</p>
             </footer>
         </div>
     );

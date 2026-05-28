@@ -7,58 +7,58 @@ const Achievements = () => {
         {
             title: "Google Cloud SkillBoost",
             description: "Completed comprehensive cloud architecture tracks. Proficient in deploying scalable apps on GCP.",
-            icon: <FaCloud className="text-4xl text-secondary" />,
-            link: "https://www.cloudskillsboost.google/public_profiles/..." // Placeholder or real link if known
+            icon: <FaCloud className="text-3xl text-secondary" />,
         },
         {
             title: "HackerRank Gold Badge",
             description: "Achieved 5-star rating in Problem Solving and Python. Top percentile in algorithms.",
-            icon: <FaCode className="text-4xl text-primary" />,
-            link: "https://www.hackerrank.com/..."
+            icon: <FaCode className="text-3xl text-primary" />,
         },
         {
             title: "Google Cloud Arcade Novice",
-            description: "Earned the Arcade Novice badge by completing hands-on Google Cloud labs and skill-based challenges, demonstrating foundational cloud computing and GCP service knowledge.",
-            icon: <FaCloud className="text-4xl text-primary" />,
-            link: "https://www.cloudskillsboost.google/public_profiles/your-profile-id"
+            description: "Earned the Arcade Novice badge by completing hands-on Google Cloud labs and skill-based challenges.",
+            icon: <FaCloud className="text-3xl text-primary" />,
         },
     ];
 
     return (
         <section id="achievements" className="py-20 relative">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-[100px] -z-10" />
+            <div className="max-w-5xl mx-auto px-6">
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    viewport={{ once: true }}
+                    className="mb-12"
+                >
+                    <h3 className="text-gray-500 text-xs tracking-[0.2em] uppercase mb-2 font-semibold text-center">Achievements</h3>
+                    <h2 className="text-3xl md:text-4xl font-heading font-bold text-center text-white">
+                        Credentials & Badges
+                    </h2>
+                </motion.div>
 
-            <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="max-w-4xl mx-auto"
-            >
-                <h3 className="text-gray-300 text-sm tracking-widest uppercase mb-2 font-semibold text-center">Achievements</h3>
-                <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-16 text-white">
-                    Credentials & Badges
-                </h2>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {achievements.map((item, index) => (
                         <motion.div
                             key={index}
-                            whileHover={{ scale: 1.05 }}
-                            className="glass-card p-6 md:p-8 rounded-xl flex flex-col sm:flex-row items-start gap-6 hover:border-secondary/50 transition-colors"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            viewport={{ once: true }}
+                            whileHover={{ y: -5 }}
+                            className="group glass-card p-6 flex flex-col items-start gap-4 hover:border-primary/30 transition-all"
                         >
-                            <div className="p-4 bg-white/5 rounded-full border border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.05)]">
+                            <div className="p-3 bg-white/[0.04] rounded-xl border border-white/10">
                                 {item.icon}
                             </div>
                             <div>
-                                <h3 className="text-xl font-bold font-heading mb-2 text-white group-hover:text-primary transition-colors">{item.title}</h3>
-                                <p className="text-gray-400 text-sm mb-4 leading-relaxed">{item.description}</p>
-                                <a href="#" className="text-secondary text-sm font-semibold hover:text-primary transition-colors hover:shadow-[0_0_10px_rgba(139,92,246,0.3)]">Verify Credential →</a>
+                                <h3 className="text-lg font-bold font-heading mb-2 text-white group-hover:text-primary transition-colors">{item.title}</h3>
+                                <p className="text-gray-500 text-sm leading-relaxed">{item.description}</p>
                             </div>
                         </motion.div>
                     ))}
                 </div>
-            </motion.div>
+            </div>
         </section>
     );
 };

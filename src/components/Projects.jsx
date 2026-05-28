@@ -23,7 +23,7 @@ const projects = [
     },
     {
         title: 'AI Trip Planner',
-        description: "Built an AI-powered Trip Planner that creates personalized itineraries using user location, preferences, and trip duration. Integrated Google Maps for distance and navigation.",
+        description: "Built an AI-powered Trip Planner that creates personalized itineraries using user location, preferences, and trip duration. Integrated Google Maps for navigation.",
         tags: ['Generative AI', 'React', 'Google Maps'],
         link: 'https://github.com/shreedhar1008/AI-Trip-Planner'
     }
@@ -31,24 +31,26 @@ const projects = [
 
 const Projects = () => {
     return (
-        <section id="projects" className="py-20 relative max-w-5xl mx-auto px-4">
-            <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="mb-12"
-            >
-                <h3 className="text-gray-300 text-sm tracking-widest uppercase mb-2 font-semibold">Projects</h3>
-                <h2 className="text-3xl md:text-4xl font-heading font-bold text-white">
-                    Featured Projects
-                </h2>
-            </motion.div>
+        <section id="projects" className="py-20 relative">
+            <div className="max-w-5xl mx-auto px-6">
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    viewport={{ once: true }}
+                    className="mb-12"
+                >
+                    <h3 className="text-gray-500 text-xs tracking-[0.2em] uppercase mb-2 font-semibold">Projects</h3>
+                    <h2 className="text-3xl md:text-4xl font-heading font-bold text-white">
+                        Featured Projects
+                    </h2>
+                </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {projects.map((project, index) => (
-                    <ProjectCard key={index} index={index} {...project} />
-                ))}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    {projects.map((project, index) => (
+                        <ProjectCard key={index} index={index} {...project} />
+                    ))}
+                </div>
             </div>
         </section>
     );
