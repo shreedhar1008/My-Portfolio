@@ -7,11 +7,14 @@ export default {
     theme: {
         extend: {
             colors: {
-                light: "#ffffff", // Pure white background
-                dark: "#050511", // Keep dark for elements needing high contrast
-                primary: "#4F46E5", // Professional Indigo
-                secondary: "#0891B2", // Professional Cyan
-                glass: "rgba(0, 0, 0, 0.03)", // Subtle dark shadow for glass on white
+                dark: "#05050A", // Deep space background
+                primary: "#6366f1", // Neon indigo
+                secondary: "#8b5cf6", // Neon purple
+                glass: "rgba(255, 255, 255, 0.03)",
+            },
+            boxShadow: {
+                'neon': '0 0 15px rgba(99, 102, 241, 0.5)',
+                'neon-strong': '0 0 25px rgba(99, 102, 241, 0.7)',
             },
             fontFamily: {
                 heading: ['Outfit', 'sans-serif'],
@@ -19,6 +22,7 @@ export default {
             },
             animation: {
                 'float': 'float 6s ease-in-out infinite',
+                'spin-slow': 'spin 8s linear infinite',
             },
             keyframes: {
                 float: {

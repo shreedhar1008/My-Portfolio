@@ -21,7 +21,7 @@ function App() {
                 <Achievements />
                 <Contact />
             </main>
-            <footer className="text-center py-8 text-gray-500 text-sm border-t border-gray-200 bg-gray-50/50 backdrop-blur-sm">
+            <footer className="text-center py-8 text-gray-500 text-sm border-t border-white/5 bg-black/20 backdrop-blur-sm">
                 <p>&copy; {new Date().getFullYear()} Shreedhar Shiragur. All Rights Reserved.</p>
             </footer>
         </div>

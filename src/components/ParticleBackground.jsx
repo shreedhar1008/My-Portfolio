@@ -1,56 +1,33 @@
-import React, { useRef, useState } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { Points, PointMaterial } from '@react-three/drei';
-import { Float32BufferAttribute } from 'three';
-
-function Stars(props) {
-    const ref = useRef();
-    const [sphere] = useState(() => {
-        const coords = new Float32Array(5000 * 3);
-        for (let i = 0; i < 5000; i++) {
-            const u = Math.random();
-            const v = Math.random();
-            const theta = 2 * Math.PI * u;
-            const phi = Math.acos(2 * v - 1);
-            const r = 1.2 + Math.random(); // spread
-
-            const x = r * Math.sin(phi) * Math.cos(theta);
-            const y = r * Math.sin(phi) * Math.sin(theta);
-            const z = r * Math.cos(phi);
-
-            coords[i * 3] = x;
-            coords[i * 3 + 1] = y;
-            coords[i * 3 + 2] = z;
-        }
-        return coords;
-    });
-
-    useFrame((state, delta) => {
-        ref.current.rotation.x -= delta / 10;
-        ref.current.rotation.y -= delta / 15;
-    });
-
-    return (
-        <group rotation={[0, 0, Math.PI / 4]}>
-            <Points ref={ref} positions={sphere} stride={3} frustumCulled={false} {...props}>
-                <PointMaterial
-                    transparent
-                    color="#4F46E5"
-                    size={0.002}
-                    sizeAttenuation={true}
-                    depthWrite={false}
-                />
-            </Points>
-        </group>
-    );
-}
+import React from 'react';
+import { motion } from 'framer-motion';
 
 const ParticleBackground = () => {
     return (
-        <div className="fixed inset-0 z-[-1] bg-slate-50">
-            <Canvas camera={{ position: [0, 0, 1] }}>
-                <Stars />
-            </Canvas>
+        <div className="fixed inset-0 z-[-1] overflow-hidden bg-dark">
+            <motion.div
+                className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/20 rounded-full blur-[120px]"
+                animate={{
+                    x: [0, 50, 0],
+                    y: [0, 30, 0],
+                }}
+                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+            />
+            <motion.div
+                className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-secondary/20 rounded-full blur-[150px]"
+                animate={{
+                    x: [0, -40, 0],
+                    y: [0, -50, 0],
+                }}
+                transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+            />
+            <motion.div
+                className="absolute top-[40%] left-[60%] w-[30%] h-[30%] bg-primary/10 rounded-full blur-[100px]"
+                animate={{
+                    x: [0, -60, 0],
+                    y: [0, 60, 0],
+                }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            />
         </div>
     );
 };

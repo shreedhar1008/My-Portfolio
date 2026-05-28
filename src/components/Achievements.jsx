@@ -35,8 +35,9 @@ const Achievements = () => {
                 viewport={{ once: true }}
                 className="max-w-4xl mx-auto"
             >
-                <h2 className="text-4xl font-heading font-bold text-center mb-16 text-gray-900">
-                    <span className="text-secondary">Credentials</span> & Badges
+                <h3 className="text-gray-300 text-sm tracking-widest uppercase mb-2 font-semibold text-center">Achievements</h3>
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-16 text-white">
+                    Credentials & Badges
                 </h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -46,13 +47,13 @@ const Achievements = () => {
                             whileHover={{ scale: 1.05 }}
                             className="glass-card p-6 md:p-8 rounded-xl flex flex-col sm:flex-row items-start gap-6 hover:border-secondary/50 transition-colors"
                         >
-                            <div className="p-4 bg-gray-50 rounded-full border border-gray-200">
+                            <div className="p-4 bg-white/5 rounded-full border border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.05)]">
                                 {item.icon}
                             </div>
                             <div>
-                                <h3 className="text-xl font-bold font-heading mb-2 text-gray-900">{item.title}</h3>
-                                <p className="text-gray-600 text-sm mb-4 leading-relaxed">{item.description}</p>
-                                <a href="#" className="text-secondary text-sm font-semibold hover:underline">Verify Credential →</a>
+                                <h3 className="text-xl font-bold font-heading mb-2 text-white group-hover:text-primary transition-colors">{item.title}</h3>
+                                <p className="text-gray-400 text-sm mb-4 leading-relaxed">{item.description}</p>
+                                <a href="#" className="text-secondary text-sm font-semibold hover:text-primary transition-colors hover:shadow-[0_0_10px_rgba(139,92,246,0.3)]">Verify Credential →</a>
                             </div>
                         </motion.div>
                     ))}

@@ -1,89 +1,58 @@
 import React from 'react';
-import { TypeAnimation } from 'react-type-animation';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
-import Terminal from './Terminal';
 
 const Hero = () => {
     return (
-        <section id="about" className="min-h-[80vh] flex items-center justify-center relative overflow-hidden py-10">
-
-            <div className="container mx-auto px-4 z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-
-                {/* Left Content */}
-                <div className="text-left py-10 md:py-0">
-                    <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 1 }}
-                    >
-                        <h1 className="text-3xl md:text-6xl font-bold font-heading mb-6 tracking-tight">
-                            Hi, I'm <br />
-                            <span className="text-gradient">Shreedhar Shiragur</span>
-                        </h1>
-                    </motion.div>
-
-                    <div className="text-xl md:text-3xl font-light text-gray-600 mb-6 h-16 flex items-center">
-                        <TypeAnimation
-                            sequence={[
-                                'CS Engineer',
-                                2000,
-                                'AI/ML Specialist',
-                                2000,
-                                'Cloud Enthusiast',
-                                2000,
-                            ]}
-                            wrapper="span"
-                            speed={50}
-                            repeat={Infinity}
-                            className="text-secondary opacity-90 font-mono"
-                        />
-                    </div>
-
-                    <motion.p
-                        className="text-gray-600 max-w-lg text-base md:text-lg leading-relaxed mb-8"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.5, duration: 0.8 }}
-                    >
-                        Building intelligent systems in the cloud. Passionate about Deep Learning, Computer Vision, and scalable architecture.
-                    </motion.p>
-
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 1 }}
-                        className="flex gap-4"
-                    >
-                        <Link
-                            to="projects"
-                            smooth={true}
-                            duration={500}
-                            className="px-6 md:px-8 py-3 bg-gradient-to-r from-primary to-secondary rounded-full font-bold text-white hover:scale-105 transition-transform duration-300 shadow-lg cursor-pointer"
-                        >
-                            View Work
-                        </Link>
-                    </motion.div>
-                </div>
-
-                {/* Right Content - Terminal */}
-                <div className="flex justify-center lg:justify-end w-full">
-                    <Terminal />
-                </div>
-
-            </div>
-
-            {/* Floating abstract shapes */}
+        <section id="about" className="min-h-screen flex flex-col items-center justify-center relative pt-20 pb-10">
             <motion.div
-                className="absolute top-1/4 left-10 w-24 h-24 bg-primary/20 rounded-full blur-3xl animate-float -z-10"
-                animate={{ y: [0, -20, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            />
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
+                className="mb-8 relative"
+            >
+                {/* Glowing ring behind image */}
+                <div className="absolute inset-[-4px] rounded-full bg-gradient-to-tr from-primary via-secondary to-primary animate-spin-slow opacity-70 blur-sm" />
+                
+                {/* Profile Image container */}
+                <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full p-1 bg-dark">
+                    <img 
+                        src="/profile.jpg" 
+                        alt="Shreedhar Shiragur" 
+                        className="w-full h-full object-cover rounded-full"
+                    />
+                </div>
+            </motion.div>
+
             <motion.div
-                className="absolute bottom-1/4 right-10 w-32 h-32 bg-secondary/20 rounded-full blur-3xl animate-float -z-10"
-                animate={{ y: [0, 30, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            />
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.8 }}
+                className="text-center max-w-3xl px-4"
+            >
+                <h1 className="text-5xl md:text-7xl font-bold font-heading mb-6 tracking-tight leading-tight text-white">
+                    Building things <br className="hidden md:block" />
+                    for the web.
+                </h1>
+
+                <p className="text-xl md:text-2xl text-gray-400 mb-10 font-light">
+                    <span className="text-gray-200 font-medium">Shreedhar Shiragur</span> <span className="mx-2 opacity-50">|</span> Software Engineer
+                </p>
+
+                <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                >
+                    <Link
+                        to="projects"
+                        smooth={true}
+                        duration={500}
+                        className="inline-block px-8 py-3 bg-gradient-to-r from-primary to-secondary rounded-full font-bold text-white shadow-neon cursor-pointer transition-shadow hover:shadow-neon-strong"
+                    >
+                        View Work
+                    </Link>
+                </motion.div>
+            </motion.div>
         </section>
     );
 };

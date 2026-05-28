@@ -4,46 +4,66 @@ import { FaEnvelope, FaLinkedin, FaGithub, FaMobile } from 'react-icons/fa';
 
 const Contact = () => {
     return (
-        <section id="contact" className="py-20 relative">
+        <section id="contact" className="py-20 relative max-w-xl mx-auto px-4">
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="max-w-4xl mx-auto text-center px-4"
+                className="text-center mb-10"
             >
-                <h2 className="text-4xl font-heading font-bold mb-12 text-gray-900">
-                    Get In <span className="text-gradient">Touch</span>
+                <h3 className="text-gray-300 text-sm tracking-widest uppercase mb-2 font-semibold">Contact</h3>
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-8">
+                    Get In Touch
                 </h2>
 
-                <p className="text-gray-600 mb-10 text-lg">
-                    I'm currently open to new opportunities and collaborations. <br />
-                    Whether you have a question or just want to say hi, I'll try my best to get back to you!
-                </p>
-
-                <div className="flex justify-center gap-8 mb-12">
-                    <a href="mailto:shreedharshiragur@gmail.com" className="text-gray-700 hover:text-secondary transition-colors text-3xl">
-                        <FaEnvelope />
+                <div className="flex justify-center gap-4">
+                    <a href="mailto:shreedharshiragur@gmail.com" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:bg-primary transition-all shadow-[0_0_10px_rgba(255,255,255,0.05)] hover:shadow-neon">
+                        <FaEnvelope size={16} />
                     </a>
-                    <a href="https://www.linkedin.com/in/shreedhar-shiragur-0a8926291" className="text-gray-700 hover:text-primary transition-colors text-3xl">
-                        <FaLinkedin />
+                    <a href="https://www.linkedin.com/in/shreedhar-shiragur-0a8926291" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:bg-primary transition-all shadow-[0_0_10px_rgba(255,255,255,0.05)] hover:shadow-neon">
+                        <FaLinkedin size={16} />
                     </a>
-                    <a href="https://github.com/shreedhar1008" className="text-gray-700 hover:text-gray-900 transition-colors text-3xl">
-                        <FaGithub />
+                    <a href="https://github.com/shreedhar1008" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:bg-primary transition-all shadow-[0_0_10px_rgba(255,255,255,0.05)] hover:shadow-neon">
+                        <FaGithub size={16} />
                     </a>
-                    <a href="tel:+919019981312" className="text-gray-700 hover:text-blue-500 transition-colors text-3xl">
-                        <FaMobile />
+                    <a href="tel:+919019981312" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:bg-primary transition-all shadow-[0_0_10px_rgba(255,255,255,0.05)] hover:shadow-neon">
+                        <FaMobile size={16} />
                     </a>
                 </div>
+            </motion.div>
 
-                <a
-                    href="https://wa.me/919019981312"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block px-10 py-4 bg-white border border-gray-200 rounded-full font-bold text-gray-900 shadow-sm hover:bg-gray-50 transition-all hover:scale-105"
-                >
-                    Say Hello
-                </a>
+            <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="glass-card p-6 md:p-8"
+            >
+                <form className="flex flex-col space-y-4">
+                    <input 
+                        type="text" 
+                        placeholder="Name" 
+                        className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-gray-200 placeholder-gray-500 focus:outline-none focus:border-primary focus:shadow-neon transition-all"
+                    />
+                    <input 
+                        type="email" 
+                        placeholder="Email" 
+                        className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-gray-200 placeholder-gray-500 focus:outline-none focus:border-primary focus:shadow-neon transition-all"
+                    />
+                    <textarea 
+                        placeholder="Message" 
+                        rows="4"
+                        className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-gray-200 placeholder-gray-500 focus:outline-none focus:border-primary focus:shadow-neon transition-all resize-none"
+                    />
+                    <button 
+                        type="button"
+                        onClick={() => window.open('https://wa.me/919019981312', '_blank')}
+                        className="w-full mt-4 bg-gradient-to-r from-primary to-secondary text-white font-bold py-3 rounded-full shadow-neon hover:shadow-neon-strong transition-all transform hover:-translate-y-1"
+                    >
+                        Contact
+                    </button>
+                </form>
             </motion.div>
         </section>
     );
