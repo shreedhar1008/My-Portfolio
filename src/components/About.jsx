@@ -11,16 +11,16 @@ const About = () => {
                 viewport={{ once: true }}
                 className="max-w-4xl mx-auto glass-card p-6 md:p-10 rounded-2xl border-l-4 border-secondary"
             >
-                <h2 className="text-2xl md:text-3xl font-heading font-bold mb-6 text-white">
+                <h2 className="text-2xl md:text-3xl font-heading font-bold mb-6 text-gray-900">
                     About <span className="text-gradient">Me</span>
                 </h2>
 
-                <p className="text-gray-300 text-lg leading-relaxed mb-4">
-                    Hello! I'm <span className="text-white font-semibold">Shreedhar Shiragur</span>, a passionate CS Engineer specializing in AI/ML and Cloud technologies.
+                <p className="text-gray-600 text-lg leading-relaxed mb-4">
+                    Hello! I'm <span className="text-gray-900 font-semibold">Shreedhar Shiragur</span>, a passionate CS Engineer specializing in AI/ML and Cloud technologies.
                     I love bridging the gap between complex algorithms and real-world applications.
                 </p>
 
-                <p className="text-gray-400 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed">
                     With a strong foundation in Python, TensorFlow, and Cloud platforms, I build scalable intelligent systems.
                     When I'm not coding, I'm exploring the latest in generative AI or optimizing cloud architectures.
                 </p>

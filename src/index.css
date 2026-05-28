@@ -8,17 +8,17 @@
   }
 
   body {
-    @apply font-body bg-dark text-white;
+    @apply font-body bg-white text-gray-900;
   }
 }
 
 @layer components {
   .glass-card {
-    @apply bg-glass backdrop-blur-md border border-white/10 shadow-xl;
+    @apply bg-white border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300;
   }
 
   .glass-nav {
-    @apply bg-dark/80 backdrop-blur-lg border-b border-white/5;
+    @apply bg-white/80 backdrop-blur-lg border-b border-gray-200 shadow-sm;
   }
 
   .text-gradient {
@@ -32,14 +32,14 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #050511;
+  background: #f8fafc;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333;
+  background: #cbd5e1;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #94a3b8;
 }

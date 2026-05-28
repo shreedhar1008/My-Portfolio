@@ -7,10 +7,11 @@ export default {
     theme: {
         extend: {
             colors: {
-                dark: "#050511", // Deep space background
-                primary: "#6C63FF", // Alien/Cyber purple
-                secondary: "#00F0FF", // Neon cyan
-                glass: "rgba(255, 255, 255, 0.05)",
+                light: "#ffffff", // Pure white background
+                dark: "#050511", // Keep dark for elements needing high contrast
+                primary: "#4F46E5", // Professional Indigo
+                secondary: "#0891B2", // Professional Cyan
+                glass: "rgba(0, 0, 0, 0.03)", // Subtle dark shadow for glass on white
             },
             fontFamily: {
                 heading: ['Outfit', 'sans-serif'],

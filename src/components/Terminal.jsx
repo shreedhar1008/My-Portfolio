@@ -51,16 +51,16 @@ const Terminal = () => {
 
     return (
         <motion.div
-            className="w-full max-w-2xl h-[400px] md:h-[500px] bg-black/80 backdrop-blur-md rounded-lg border border-primary/30 shadow-[0_0_30px_rgba(108,99,255,0.2)] overflow-hidden font-mono text-sm md:text-base flex flex-col"
+            className="w-full max-w-2xl h-[400px] md:h-[500px] bg-white rounded-lg border border-gray-200 shadow-xl overflow-hidden font-mono text-sm md:text-base flex flex-col"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
         >
-            <div className="bg-gray-900/90 px-4 py-2 border-b border-gray-700 flex items-center gap-2">
+            <div className="bg-gray-100 px-4 py-2 border-b border-gray-200 flex items-center gap-2">
                 <div className="w-3 h-3 rounded-full bg-red-500" />
                 <div className="w-3 h-3 rounded-full bg-yellow-500" />
                 <div className="w-3 h-3 rounded-full bg-green-500" />
-                <span className="ml-2 text-gray-400 text-xs">shreedhar@portfolio: ~</span>
+                <span className="ml-2 text-gray-500 text-xs">shreedhar@portfolio: ~</span>
             </div>
 
             <div
@@ -69,7 +69,7 @@ const Terminal = () => {
                 onClick={() => inputRef.current?.focus()}
             >
                 {history.map((line, i) => (
-                    <div key={i} className={`mb-2 ${line.type === 'input' ? 'text-white' : 'text-primary'}`}>
+                    <div key={i} className={`mb-2 ${line.type === 'input' ? 'text-gray-900' : 'text-primary'}`}>
                         {line.type === 'input' ? (
                             <span><span className="text-secondary">➜</span> ~ {line.content}</span>
                         ) : (
@@ -78,7 +78,7 @@ const Terminal = () => {
                     </div>
                 ))}
 
-                <div className="flex items-center gap-2 text-white">
+                <div className="flex items-center gap-2 text-gray-900">
                     <span className="text-secondary">➜</span>
                     <span>~</span>
                     <input
@@ -87,7 +87,7 @@ const Terminal = () => {
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
                         onKeyDown={handleKeyDown}
-                        className="bg-transparent border-none outline-none flex-1 font-mono text-white caret-primary"
+                        className="bg-transparent border-none outline-none flex-1 font-mono text-gray-900 caret-primary"
                     />
                 </div>
             </div>

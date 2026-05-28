@@ -35,7 +35,7 @@ function Stars(props) {
             <Points ref={ref} positions={sphere} stride={3} frustumCulled={false} {...props}>
                 <PointMaterial
                     transparent
-                    color="#ffffff"
+                    color="#4F46E5"
                     size={0.002}
                     sizeAttenuation={true}
                     depthWrite={false}
@@ -47,7 +47,7 @@ function Stars(props) {
 
 const ParticleBackground = () => {
     return (
-        <div className="fixed inset-0 z-[-1] bg-dark">
+        <div className="fixed inset-0 z-[-1] bg-slate-50">
             <Canvas camera={{ position: [0, 0, 1] }}>
                 <Stars />
             </Canvas>

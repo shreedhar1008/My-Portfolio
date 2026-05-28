@@ -38,13 +38,13 @@ const ProjectCard = ({ title, description, tags, link, demo }) => {
                 rotateX,
                 transformStyle: "preserve-3d",
             }}
-            className="relative w-full min-h-[400px] md:min-h-[450px] h-auto rounded-xl bg-glass border border-white/10 p-6 md:p-8 cursor-pointer group perspective-1000"
+            className="relative w-full min-h-[400px] md:min-h-[450px] h-auto rounded-xl bg-white border border-gray-200 shadow-md p-6 md:p-8 cursor-pointer group perspective-1000"
         >
             <div style={{ transform: "translateZ(75px)", transformStyle: "preserve-3d" }} className="h-full flex flex-col">
-                <h3 className="text-2xl md:text-3xl font-heading font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-secondary to-white group-hover:from-white group-hover:to-secondary transition-all">
+                <h3 className="text-2xl md:text-3xl font-heading font-bold mb-4 text-gray-900 group-hover:text-primary transition-colors">
                     {title}
                 </h3>
-                <p className="text-gray-300 mb-6 flex-grow leading-relaxed text-sm md:text-base">
+                <p className="text-gray-600 mb-6 flex-grow leading-relaxed text-sm md:text-base">
                     {description}
                 </p>
 
@@ -57,11 +57,11 @@ const ProjectCard = ({ title, description, tags, link, demo }) => {
                 </div>
 
                 <div className="flex items-center gap-4 mt-auto">
-                    <a href={link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white hover:text-secondary transition-colors">
+                    <a href={link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors">
                         <FaGithub size={20} /> Code
                     </a>
                     {demo && (
-                        <a href={demo} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white hover:text-secondary transition-colors">
+                        <a href={demo} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors">
                             <FaExternalLinkAlt size={18} /> Demo
                         </a>
                     )}

@@ -66,10 +66,10 @@ const Journey = () => {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl font-heading font-bold text-white mb-4">
+                    <h2 className="text-4xl font-heading font-bold text-gray-900 mb-4">
                         My <span className="text-gradient">Journey</span>
                     </h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto">
+                    <p className="text-gray-600 max-w-2xl mx-auto">
                         Focused on backend development, scalable APIs, and ML-integrated full-stack systems.
                     </p>
                 </motion.div>
@@ -93,12 +93,12 @@ const Journey = () => {
                                     <div className="flex items-center gap-2 mb-2">
                                         <span className="text-secondary font-bold text-base md:text-lg">{exp.title}</span>
                                     </div>
-                                    <h4 className="text-white font-semibold mb-1 text-sm md:text-base">{exp.institution} <span className="text-gray-500 text-[10px] md:text-xs font-normal">@{exp.location}</span></h4>
-                                    <p className="text-gray-400 text-xs md:text-sm mb-4 leading-relaxed">{exp.description}</p>
+                                    <h4 className="text-gray-900 font-semibold mb-1 text-sm md:text-base">{exp.institution} <span className="text-gray-500 text-[10px] md:text-xs font-normal">@{exp.location}</span></h4>
+                                    <p className="text-gray-600 text-xs md:text-sm mb-4 leading-relaxed">{exp.description}</p>
 
                                     <div className="flex flex-wrap gap-2">
                                         {exp.tags.map(tag => (
-                                            <span key={tag} className="px-2 py-1 text-[9px] md:text-[10px] font-semibold bg-white/5 border border-white/10 text-gray-300 rounded-md uppercase tracking-wider">
+                                            <span key={tag} className="px-2 py-1 text-[9px] md:text-[10px] font-semibold bg-gray-100 border border-gray-200 text-gray-600 rounded-md uppercase tracking-wider">
                                                 {tag}
                                             </span>
                                         ))}
@@ -106,7 +106,7 @@ const Journey = () => {
                                 </div>
 
                                 {/* Icon / Center Marker */}
-                                <div className="absolute left-4 md:left-1/2 transform -translate-x-1/2 z-10 bg-dark p-2 md:p-3 rounded-full border-2 border-primary shadow-[0_0_15px_rgba(108,99,255,0.3)] my-4 md:my-0">
+                                <div className="absolute left-4 md:left-1/2 transform -translate-x-1/2 z-10 bg-white p-2 md:p-3 rounded-full border-2 border-primary shadow-md my-4 md:my-0">
                                     <div className="text-primary text-lg md:text-xl">
                                         {exp.icon}
                                     </div>
@@ -114,7 +114,7 @@ const Journey = () => {
 
                                 {/* Date Area */}
                                 <div className={`w-full md:w-[45%] flex mt-4 md:mt-0 ml-12 md:ml-0 ${index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'}`}>
-                                    <div className="flex items-center gap-2 text-gray-400 font-mono text-[10px] md:text-sm bg-white/5 px-3 md:px-4 py-1 rounded-full border border-white/10">
+                                    <div className="flex items-center gap-2 text-gray-600 font-mono text-[10px] md:text-sm bg-white px-3 md:px-4 py-1 rounded-full border border-gray-200 shadow-sm">
                                         <span className="w-2 h-2 rounded-full bg-secondary" />
                                         {exp.period}
                                     </div>

@@ -23,7 +23,7 @@ const Hero = () => {
                         </h1>
                     </motion.div>
 
-                    <div className="text-xl md:text-3xl font-light text-gray-300 mb-6 h-16 flex items-center">
+                    <div className="text-xl md:text-3xl font-light text-gray-600 mb-6 h-16 flex items-center">
                         <TypeAnimation
                             sequence={[
                                 'CS Engineer',
@@ -41,7 +41,7 @@ const Hero = () => {
                     </div>
 
                     <motion.p
-                        className="text-gray-400 max-w-lg text-base md:text-lg leading-relaxed mb-8"
+                        className="text-gray-600 max-w-lg text-base md:text-lg leading-relaxed mb-8"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.5, duration: 0.8 }}
@@ -59,7 +59,7 @@ const Hero = () => {
                             to="projects"
                             smooth={true}
                             duration={500}
-                            className="px-6 md:px-8 py-3 bg-gradient-to-r from-primary to-secondary rounded-full font-bold text-black hover:scale-105 transition-transform duration-300 shadow-[0_0_20px_rgba(108,99,255,0.5)] cursor-pointer"
+                            className="px-6 md:px-8 py-3 bg-gradient-to-r from-primary to-secondary rounded-full font-bold text-white hover:scale-105 transition-transform duration-300 shadow-lg cursor-pointer"
                         >
                             View Work
                         </Link>

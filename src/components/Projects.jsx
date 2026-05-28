@@ -38,7 +38,7 @@ const Projects = () => {
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
             >
-                <h2 className="text-4xl font-heading font-bold text-center mb-16 text-white">
+                <h2 className="text-4xl font-heading font-bold text-center mb-16 text-gray-900">
                     Featured <span className="text-gradient">Projects</span>
                 </h2>
 

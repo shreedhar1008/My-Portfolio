@@ -12,26 +12,26 @@ const Contact = () => {
                 viewport={{ once: true }}
                 className="max-w-4xl mx-auto text-center px-4"
             >
-                <h2 className="text-4xl font-heading font-bold mb-12 text-white">
+                <h2 className="text-4xl font-heading font-bold mb-12 text-gray-900">
                     Get In <span className="text-gradient">Touch</span>
                 </h2>
 
-                <p className="text-gray-400 mb-10 text-lg">
+                <p className="text-gray-600 mb-10 text-lg">
                     I'm currently open to new opportunities and collaborations. <br />
                     Whether you have a question or just want to say hi, I'll try my best to get back to you!
                 </p>
 
                 <div className="flex justify-center gap-8 mb-12">
-                    <a href="mailto:shreedharshiragur@gmail.com" className="text-white hover:text-secondary transition-colors text-3xl">
+                    <a href="mailto:shreedharshiragur@gmail.com" className="text-gray-700 hover:text-secondary transition-colors text-3xl">
                         <FaEnvelope />
                     </a>
-                    <a href="https://www.linkedin.com/in/shreedhar-shiragur-0a8926291" className="text-white hover:text-primary transition-colors text-3xl">
+                    <a href="https://www.linkedin.com/in/shreedhar-shiragur-0a8926291" className="text-gray-700 hover:text-primary transition-colors text-3xl">
                         <FaLinkedin />
                     </a>
-                    <a href="https://github.com/shreedhar1008" className="text-white hover:text-white/80 transition-colors text-3xl">
+                    <a href="https://github.com/shreedhar1008" className="text-gray-700 hover:text-gray-900 transition-colors text-3xl">
                         <FaGithub />
                     </a>
-                    <a href="tel:+919019981312" className="text-white hover:text-blue-400 transition-colors text-3xl">
+                    <a href="tel:+919019981312" className="text-gray-700 hover:text-blue-500 transition-colors text-3xl">
                         <FaMobile />
                     </a>
                 </div>
@@ -40,7 +40,7 @@ const Contact = () => {
                     href="https://wa.me/919019981312"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block px-10 py-4 bg-white/5 border border-white/10 rounded-full font-bold text-white hover:bg-white/10 transition-all hover:scale-105"
+                    className="inline-block px-10 py-4 bg-white border border-gray-200 rounded-full font-bold text-gray-900 shadow-sm hover:bg-gray-50 transition-all hover:scale-105"
                 >
                     Say Hello
                 </a>

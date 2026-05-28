@@ -35,7 +35,7 @@ const Achievements = () => {
                 viewport={{ once: true }}
                 className="max-w-4xl mx-auto"
             >
-                <h2 className="text-4xl font-heading font-bold text-center mb-16 text-white">
+                <h2 className="text-4xl font-heading font-bold text-center mb-16 text-gray-900">
                     <span className="text-secondary">Credentials</span> & Badges
                 </h2>
 
@@ -46,12 +46,12 @@ const Achievements = () => {
                             whileHover={{ scale: 1.05 }}
                             className="glass-card p-6 md:p-8 rounded-xl flex flex-col sm:flex-row items-start gap-6 hover:border-secondary/50 transition-colors"
                         >
-                            <div className="p-4 bg-white/5 rounded-full border border-white/10">
+                            <div className="p-4 bg-gray-50 rounded-full border border-gray-200">
                                 {item.icon}
                             </div>
                             <div>
-                                <h3 className="text-xl font-bold font-heading mb-2">{item.title}</h3>
-                                <p className="text-gray-400 text-sm mb-4 leading-relaxed">{item.description}</p>
+                                <h3 className="text-xl font-bold font-heading mb-2 text-gray-900">{item.title}</h3>
+                                <p className="text-gray-600 text-sm mb-4 leading-relaxed">{item.description}</p>
                                 <a href="#" className="text-secondary text-sm font-semibold hover:underline">Verify Credential →</a>
                             </div>
                         </motion.div>

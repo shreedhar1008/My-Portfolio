@@ -28,8 +28,8 @@ const Navbar = () => {
             <div className="container mx-auto px-4 flex justify-between items-center">
                 <div className="flex items-center gap-4 cursor-pointer">
                     <img src="/profile.jpg" alt="Profile" className="w-12 h-12 md:w-16 md:h-16 rounded-full border-2 border-primary object-cover" />
-                    <div className="text-2xl md:text-3xl font-bold font-heading text-white tracking-widest uppercase">
-                        <span className="text-secondary">श्रीಧR</span>_S
+                    <div className="text-2xl md:text-3xl font-bold font-heading text-gray-900 tracking-widest uppercase">
+                        <span className="text-primary">श्रीಧR</span>_S
                     </div>
                 </div>
 
@@ -41,7 +41,7 @@ const Navbar = () => {
                                 to={item.toLowerCase()}
                                 smooth={true}
                                 duration={500}
-                                className="text-gray-300 hover:text-secondary cursor-pointer transition-colors duration-300 font-medium"
+                                className="text-gray-600 hover:text-primary cursor-pointer transition-colors duration-300 font-medium"
                             >
                                 {item}
                             </Link>
@@ -53,7 +53,7 @@ const Navbar = () => {
                 <div className="md:hidden">
                     <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className="text-white p-2 focus:outline-none"
+                        className="text-gray-900 p-2 focus:outline-none"
                     >
                         {isOpen ? <HiX size={28} /> : <HiMenu size={28} />}
                     </button>
@@ -67,7 +67,7 @@ const Navbar = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-dark/95 backdrop-blur-lg border-b border-white/10"
+                        className="md:hidden bg-white/95 backdrop-blur-lg border-b border-gray-200"
                     >
                         <ul className="flex flex-col items-center py-6 space-y-6">
                             {navItems.map((item) => (
@@ -77,7 +77,7 @@ const Navbar = () => {
                                         smooth={true}
                                         duration={500}
                                         onClick={() => setIsOpen(false)}
-                                        className="text-xl text-gray-300 hover:text-secondary cursor-pointer transition-colors duration-300 font-medium"
+                                        className="text-xl text-gray-600 hover:text-primary cursor-pointer transition-colors duration-300 font-medium"
                                     >
                                         {item}
                                     </Link>
