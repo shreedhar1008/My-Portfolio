@@ -7,18 +7,30 @@ export default {
     theme: {
         extend: {
             colors: {
-                dark: "#05050A", // Deep space background
-                primary: "#6366f1", // Neon indigo
-                secondary: "#8b5cf6", // Neon purple
-                glass: "rgba(255, 255, 255, 0.03)",
+                dark: "#051424", // Deep Navy / Brand Background
+                primary: "#adc6ff", // Electric Blue
+                secondary: "#d2bbff", // Violet
+                surface: "#051424",
+                'surface-container-lowest': '#010f1f',
+                'surface-container-low': '#0d1c2d',
+                'surface-container': '#122131',
+                'surface-container-high': '#1c2b3c',
+                'surface-container-highest': '#273647',
+                'surface-variant': '#273647',
+                'on-surface': '#d4e4fa',
+                'on-surface-variant': '#c2c6d6',
+                'outline-variant': '#424754',
+                glass: "rgba(10, 15, 30, 0.6)",
             },
             boxShadow: {
-                'neon': '0 0 15px rgba(99, 102, 241, 0.5)',
-                'neon-strong': '0 0 25px rgba(99, 102, 241, 0.7)',
+                'neon': '0 0 15px rgba(173, 198, 255, 0.3)',
+                'neon-strong': '0 0 25px rgba(173, 198, 255, 0.5)',
             },
             fontFamily: {
-                heading: ['Outfit', 'sans-serif'],
-                body: ['"Plus Jakarta Sans"', 'sans-serif'],
+                heading: ['Syne', 'sans-serif'],
+                body: ['Inter', 'sans-serif'],
+                label: ['"Space Grotesk"', 'sans-serif'],
+                code: ['"JetBrains Mono"', 'monospace'],
             },
             animation: {
                 'float': 'float 6s ease-in-out infinite',

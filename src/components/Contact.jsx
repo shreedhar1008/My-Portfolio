@@ -13,8 +13,8 @@ const Contact = () => {
                     viewport={{ once: true }}
                     className="text-center mb-10"
                 >
-                    <h3 className="text-gray-500 text-xs tracking-[0.2em] uppercase mb-2 font-semibold">Contact</h3>
-                    <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-8">
+                    <h3 className="font-label text-xs tracking-[0.2em] uppercase mb-2 font-semibold text-primary">Contact</h3>
+                    <h2 className="text-3xl md:text-5xl font-heading font-extrabold text-white mb-8">
                         Get In Touch
                     </h2>
 
@@ -30,7 +30,7 @@ const Contact = () => {
                                 href={item.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-10 h-10 rounded-full bg-white/[0.06] border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary/80 hover:border-primary hover:shadow-neon transition-all"
+                                className="w-10 h-10 rounded-full bg-white/[0.04] border border-white/10 flex items-center justify-center text-on-surface-variant hover:text-white hover:bg-primary/20 hover:border-primary/40 hover:shadow-neon transition-all duration-300"
                             >
                                 {item.icon}
                             </a>
@@ -49,24 +49,24 @@ const Contact = () => {
                         <input 
                             type="text" 
                             placeholder="Name" 
-                            className="w-full bg-white/[0.04] border border-white/10 rounded-lg px-4 py-3 text-gray-200 placeholder-gray-600 text-sm focus:outline-none focus:border-primary/50 focus:shadow-neon transition-all"
+                            className="font-body w-full bg-[#050810]/60 border border-white/10 rounded-[4px] px-4 py-3 text-on-surface placeholder-gray-600 text-sm focus:outline-none focus:border-primary/50 focus:shadow-neon transition-all"
                         />
                         <input 
                             type="email" 
                             placeholder="Email" 
-                            className="w-full bg-white/[0.04] border border-white/10 rounded-lg px-4 py-3 text-gray-200 placeholder-gray-600 text-sm focus:outline-none focus:border-primary/50 focus:shadow-neon transition-all"
+                            className="font-body w-full bg-[#050810]/60 border border-white/10 rounded-[4px] px-4 py-3 text-on-surface placeholder-gray-600 text-sm focus:outline-none focus:border-primary/50 focus:shadow-neon transition-all"
                         />
                         <textarea 
                             placeholder="Message" 
                             rows="4"
-                            className="w-full bg-white/[0.04] border border-white/10 rounded-lg px-4 py-3 text-gray-200 placeholder-gray-600 text-sm focus:outline-none focus:border-primary/50 focus:shadow-neon transition-all resize-none"
+                            className="font-body w-full bg-[#050810]/60 border border-white/10 rounded-[4px] px-4 py-3 text-on-surface placeholder-gray-600 text-sm focus:outline-none focus:border-primary/50 focus:shadow-neon transition-all resize-none"
                         />
                         <button 
                             type="button"
                             onClick={() => window.open('https://wa.me/919019981312', '_blank')}
-                            className="w-full bg-gradient-to-r from-primary to-secondary text-white font-bold py-3 rounded-full shadow-neon hover:shadow-neon-strong transition-all text-sm mt-2"
+                            className="font-label text-xs uppercase tracking-wider w-full bg-gradient-to-r from-primary to-secondary text-slate-900 font-bold py-3.5 rounded-[4px] shadow-neon hover:shadow-neon-strong transition-all duration-300 hover:scale-[1.01] active:scale-[0.99] mt-2"
                         >
-                            Contact
+                            Send Message
                         </button>
                     </form>
                 </motion.div>

@@ -32,13 +32,13 @@ const Navbar = () => {
             >
                 <div className={`flex justify-between items-center px-6 py-3 rounded-full transition-all duration-500 ${
                     scrolled
-                        ? 'bg-white/[0.04] backdrop-blur-xl border border-white/10 shadow-neon'
-                        : 'bg-white/[0.02] backdrop-blur-sm border border-transparent'
+                        ? 'bg-[#0a0f1e]/80 backdrop-blur-xl border border-white/15 shadow-neon'
+                        : 'bg-transparent border border-transparent'
                 }`}>
                     {/* Logo */}
                     <div className="flex items-center gap-3 cursor-pointer">
-                        <div className="w-9 h-9 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-neon">
-                            <span className="font-heading font-bold text-white text-sm">SS</span>
+                        <div className="w-9 h-9 rounded-[4px] bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-neon">
+                            <span className="font-heading font-extrabold text-slate-900 text-sm">SS</span>
                         </div>
                     </div>
 
@@ -50,7 +50,7 @@ const Navbar = () => {
                                     to={item.to}
                                     smooth={true}
                                     duration={500}
-                                    className="text-gray-400 hover:text-white cursor-pointer transition-colors duration-300 text-sm font-medium"
+                                    className="font-label text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary cursor-pointer transition-colors duration-300 font-semibold"
                                 >
                                     {item.name}
                                 </Link>
@@ -84,7 +84,7 @@ const Navbar = () => {
                                             smooth={true}
                                             duration={500}
                                             onClick={() => setIsOpen(false)}
-                                            className="text-gray-300 hover:text-primary cursor-pointer transition-colors duration-300 font-medium"
+                                            className="font-label text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary cursor-pointer transition-colors duration-300 font-semibold"
                                         >
                                             {item.name}
                                         </Link>

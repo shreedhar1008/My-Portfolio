@@ -40,8 +40,8 @@ const Projects = () => {
                     viewport={{ once: true }}
                     className="mb-12"
                 >
-                    <h3 className="text-gray-500 text-xs tracking-[0.2em] uppercase mb-2 font-semibold">Projects</h3>
-                    <h2 className="text-3xl md:text-4xl font-heading font-bold text-white">
+                    <h3 className="font-label text-xs tracking-[0.2em] uppercase mb-2 font-semibold text-primary">Projects</h3>
+                    <h2 className="text-3xl md:text-5xl font-heading font-extrabold text-white">
                         Featured Projects
                     </h2>
                 </motion.div>

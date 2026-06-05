@@ -32,8 +32,8 @@ const Achievements = () => {
                     viewport={{ once: true }}
                     className="mb-12"
                 >
-                    <h3 className="text-gray-500 text-xs tracking-[0.2em] uppercase mb-2 font-semibold text-center">Achievements</h3>
-                    <h2 className="text-3xl md:text-4xl font-heading font-bold text-center text-white">
+                    <h3 className="font-label text-xs tracking-[0.2em] uppercase mb-2 font-semibold text-center text-primary">Achievements</h3>
+                    <h2 className="text-3xl md:text-5xl font-heading font-extrabold text-center text-white">
                         Credentials & Badges
                     </h2>
                 </motion.div>
@@ -47,14 +47,14 @@ const Achievements = () => {
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             viewport={{ once: true }}
                             whileHover={{ y: -5 }}
-                            className="group glass-card p-6 flex flex-col items-start gap-4 hover:border-primary/30 transition-all"
+                            className="group glass-card p-6 flex flex-col items-start gap-4 transition-all duration-300"
                         >
-                            <div className="p-3 bg-white/[0.04] rounded-xl border border-white/10">
+                            <div className="p-3 bg-dark rounded-lg border border-white/10">
                                 {item.icon}
                             </div>
                             <div>
-                                <h3 className="text-lg font-bold font-heading mb-2 text-white group-hover:text-primary transition-colors">{item.title}</h3>
-                                <p className="text-gray-500 text-sm leading-relaxed">{item.description}</p>
+                                <h3 className="text-lg font-heading font-extrabold mb-2 text-white group-hover:text-primary transition-colors">{item.title}</h3>
+                                <p className="font-body text-on-surface-variant text-sm leading-relaxed">{item.description}</p>
                             </div>
                         </motion.div>
                     ))}

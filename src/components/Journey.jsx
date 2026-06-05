@@ -52,8 +52,8 @@ const Journey = () => {
                     viewport={{ once: true }}
                     className="mb-16"
                 >
-                    <h3 className="text-gray-500 text-xs tracking-[0.2em] uppercase mb-2 font-semibold">Experience & Education</h3>
-                    <h2 className="text-3xl md:text-4xl font-heading font-bold text-white">
+                    <h3 className="font-label text-xs tracking-[0.2em] uppercase mb-2 font-semibold text-primary">Experience & Education</h3>
+                    <h2 className="text-3xl md:text-5xl font-heading font-extrabold text-white">
                         My Journey
                     </h2>
                 </motion.div>
@@ -75,7 +75,7 @@ const Journey = () => {
                             >
                                 {/* Date - left side on desktop */}
                                 <div className="hidden md:block w-[120px] flex-shrink-0 text-right pt-5">
-                                    <span className="text-gray-500 text-xs font-medium whitespace-nowrap">{exp.period}</span>
+                                    <span className="font-label text-xs font-bold uppercase tracking-wider text-primary">{exp.period}</span>
                                 </div>
 
                                 {/* Dot */}
@@ -84,11 +84,11 @@ const Journey = () => {
                                 </div>
 
                                 {/* Card */}
-                                <div className="flex-1 glass-card p-5 md:p-6 hover:border-primary/30 transition-colors">
-                                    <div className="md:hidden text-primary text-xs font-medium mb-2">{exp.period}</div>
-                                    <h4 className="text-white font-bold mb-1 text-base">{exp.title}</h4>
-                                    <div className="text-gray-400 text-sm mb-3">{exp.institution}</div>
-                                    <ul className="list-disc ml-4 space-y-1.5 text-gray-400 text-sm leading-relaxed">
+                                <div className="flex-1 glass-card p-5 md:p-6 transition-all duration-300">
+                                    <div className="md:hidden font-label text-xs font-bold uppercase tracking-wider text-primary mb-2">{exp.period}</div>
+                                    <h4 className="text-lg font-heading font-extrabold text-white mb-1">{exp.title}</h4>
+                                    <div className="font-label text-xs font-semibold text-secondary uppercase tracking-wider mb-3">{exp.institution}</div>
+                                    <ul className="font-body list-disc ml-4 space-y-1.5 text-on-surface-variant text-sm leading-relaxed">
                                         {exp.description.map((bullet, bIdx) => (
                                             <li key={bIdx}>{bullet}</li>
                                         ))}

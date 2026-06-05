@@ -37,9 +37,9 @@ const About = () => {
                         viewport={{ once: true }}
                         className="lg:col-span-5"
                     >
-                        <h3 className="text-gray-500 text-xs tracking-[0.2em] uppercase mb-4 font-semibold">About</h3>
+                        <h3 className="font-label text-xs tracking-[0.2em] uppercase mb-4 font-semibold text-primary">About</h3>
                         <div className="glass-card p-6 md:p-8 sticky top-28">
-                            <p className="text-gray-400 leading-relaxed text-sm">
+                            <p className="font-body text-on-surface-variant leading-relaxed text-sm">
                                 Shreedhar Shiragur is a Computer Science graduate with a strong foundation in AI/ML and software development, passionate about building intelligent systems that solve real-world problems.
                                 <br /><br />
                                 He has hands-on experience in designing and delivering end-to-end software and machine learning solutions—from data ingestion to deployment, achieving measurable performance gains.
@@ -57,7 +57,7 @@ const About = () => {
                         viewport={{ once: true }}
                         className="lg:col-span-7"
                     >
-                        <h3 className="text-gray-500 text-xs tracking-[0.2em] uppercase mb-4 font-semibold">Skills & Expertise</h3>
+                        <h3 className="font-label text-xs tracking-[0.2em] uppercase mb-4 font-semibold text-primary">Skills & Expertise</h3>
                         <div className="space-y-4">
                             {skillCategories.map((cat, index) => (
                                 <motion.div
@@ -68,14 +68,14 @@ const About = () => {
                                     viewport={{ once: true }}
                                     className="glass-card p-5 hover:border-primary/20 transition-all duration-300"
                                 >
-                                    <h4 className="text-white text-xs font-bold uppercase tracking-wider mb-3 text-primary">
+                                    <h4 className="font-label text-xs font-bold uppercase tracking-wider mb-3 text-secondary">
                                         {cat.title}
                                     </h4>
                                     <div className="flex flex-wrap gap-2">
                                         {cat.skills.map((skill) => (
                                             <span 
                                                 key={skill}
-                                                className="px-3 py-1.5 rounded-lg bg-white/[0.03] border border-white/5 text-gray-300 text-xs font-medium hover:border-primary/40 hover:text-white transition-all cursor-default"
+                                                className="font-label text-[11px] uppercase tracking-wider px-3 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20 hover:bg-primary/25 transition-all duration-300 cursor-default"
                                             >
                                                 {skill}
                                             </span>
