@@ -28,7 +28,7 @@ const Navbar = () => {
                 ? 'bg-surface/80 backdrop-blur-xl border-b border-white/10 shadow-xl' 
                 : 'bg-transparent border-b border-transparent'
         }`}>
-            <div className="flex justify-between items-center w-full px-6 md:px-16 py-4 max-w-7xl mx-auto">
+            <div className="flex justify-between items-center w-full px-6 py-4 max-w-5xl mx-auto">
                 {/* Logo */}
                 <div className="flex items-center gap-3 cursor-pointer">
                     <div className="w-9 h-9 rounded-[4px] bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-neon">

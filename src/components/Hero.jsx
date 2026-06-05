@@ -33,9 +33,9 @@ const Hero = () => {
                 transition={{ delay: 0.3, duration: 0.8 }}
                 className="text-center max-w-3xl"
             >
-                <h1 className="text-4xl sm:text-6xl md:text-8xl font-heading font-extrabold mb-4 md:mb-6 tracking-tight leading-[1.1] text-white">
-                    <span className="block text-on-surface">Shreedhar</span>
-                    <span className="block text-gradient">Shiragur</span>
+                <h1 className="text-4xl sm:text-6xl md:text-8xl font-heading font-extrabold mb-4 md:mb-6 tracking-tight leading-[1.2] text-white">
+                    <span className="block text-on-surface pb-1">Shreedhar</span>
+                    <span className="block text-gradient pb-3">Shiragur</span>
                 </h1>
 
                 <div className="text-lg md:text-2xl text-on-surface-variant mb-6 md:mb-10 h-8 font-body font-light flex items-center justify-center gap-2">
