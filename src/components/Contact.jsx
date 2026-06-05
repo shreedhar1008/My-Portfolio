@@ -49,22 +49,22 @@ const Contact = () => {
                         <input 
                             type="text" 
                             placeholder="Name" 
-                            className="font-body w-full bg-[#050810]/60 border border-white/10 rounded-[4px] px-4 py-3 text-on-surface placeholder-gray-600 text-sm focus:outline-none focus:border-primary/50 focus:shadow-neon transition-all"
+                            className="font-body w-full bg-[#050810]/60 border border-white/10 rounded-lg px-4 py-3 text-on-surface placeholder-gray-600 text-sm focus:outline-none focus:border-primary/50 focus:shadow-neon transition-all"
                         />
                         <input 
                             type="email" 
                             placeholder="Email" 
-                            className="font-body w-full bg-[#050810]/60 border border-white/10 rounded-[4px] px-4 py-3 text-on-surface placeholder-gray-600 text-sm focus:outline-none focus:border-primary/50 focus:shadow-neon transition-all"
+                            className="font-body w-full bg-[#050810]/60 border border-white/10 rounded-lg px-4 py-3 text-on-surface placeholder-gray-600 text-sm focus:outline-none focus:border-primary/50 focus:shadow-neon transition-all"
                         />
                         <textarea 
                             placeholder="Message" 
                             rows="4"
-                            className="font-body w-full bg-[#050810]/60 border border-white/10 rounded-[4px] px-4 py-3 text-on-surface placeholder-gray-600 text-sm focus:outline-none focus:border-primary/50 focus:shadow-neon transition-all resize-none"
+                            className="font-body w-full bg-[#050810]/60 border border-white/10 rounded-lg px-4 py-3 text-on-surface placeholder-gray-600 text-sm focus:outline-none focus:border-primary/50 focus:shadow-neon transition-all resize-none"
                         />
                         <button 
                             type="button"
                             onClick={() => window.open('https://wa.me/919019981312', '_blank')}
-                            className="font-label text-xs uppercase tracking-wider w-full bg-gradient-to-r from-primary to-secondary text-slate-900 font-bold py-3.5 rounded-[4px] shadow-neon hover:shadow-neon-strong transition-all duration-300 hover:scale-[1.01] active:scale-[0.99] mt-2"
+                            className="font-label text-xs uppercase tracking-wider w-full bg-gradient-to-r from-primary to-secondary text-slate-900 font-bold py-3.5 rounded-lg shadow-neon hover:shadow-neon-strong transition-all duration-300 hover:scale-[1.01] active:scale-[0.99] mt-2"
                         >
                             Send Message
                         </button>

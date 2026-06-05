@@ -65,7 +65,7 @@ const Hero = () => {
                         to="projects"
                         smooth={true}
                         duration={500}
-                        className="inline-block px-8 py-4 bg-gradient-to-r from-primary to-secondary rounded-full font-label font-bold text-slate-900 shadow-neon hover:shadow-neon-strong cursor-pointer transition-all duration-300 text-sm hover:scale-[1.02] active:scale-[0.98]"
+                        className="inline-block px-8 py-4 bg-gradient-to-r from-primary to-secondary rounded-lg font-label font-bold text-slate-900 shadow-neon hover:shadow-neon-strong cursor-pointer transition-all duration-300 text-sm hover:scale-[1.02] active:scale-[0.98]"
                     >
                         View My Work
                     </Link>

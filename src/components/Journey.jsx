@@ -61,7 +61,7 @@ const Journey = () => {
                 {/* Timeline container */}
                 <div className="relative max-w-2xl mx-auto">
                     {/* Timeline Line */}
-                    <div className="absolute left-3 md:left-[140px] top-0 bottom-0 w-px bg-gradient-to-b from-primary via-secondary to-transparent" />
+                    <div className="absolute left-[15px] md:left-[140px] top-0 bottom-0 w-px bg-gradient-to-b from-primary via-secondary to-transparent" />
 
                     <div className="space-y-10">
                         {experiences.map((exp, index) => (
@@ -71,7 +71,7 @@ const Journey = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 viewport={{ once: true }}
-                                className="relative flex items-start gap-6 md:gap-8"
+                                className="relative flex items-start gap-4 md:gap-0"
                             >
                                 {/* Date - left side on desktop */}
                                 <div className="hidden md:block w-[120px] flex-shrink-0 text-right pt-5">
@@ -79,7 +79,7 @@ const Journey = () => {
                                 </div>
 
                                 {/* Dot */}
-                                <div className="relative flex-shrink-0 mt-5">
+                                <div className="w-[31px] md:w-[41px] flex-shrink-0 flex justify-center mt-5 z-10">
                                     <div className="w-[7px] h-[7px] rounded-full bg-primary shadow-neon" />
                                 </div>
 
