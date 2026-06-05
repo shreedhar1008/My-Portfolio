@@ -4,28 +4,41 @@ import { motion } from 'framer-motion';
 const Journey = () => {
     const experiences = [
         {
-            title: "Virtual Intern – Android App (GenAI)",
-            institution: "MindMatrix",
-            period: "Feb 2026 - May 2026",
-            description: "Developing Android apps using Generative AI, focusing on AI-assisted development workflows and intelligent features."
-        },
-        {
-            title: "Virtual Intern",
-            institution: "Infosys Springboard",
+            title: "Python Full-Stack Developer Intern",
+            institution: "Infosys Springboard - StudyTrack Project",
             period: "Nov 2025 - Jan 2026",
-            description: "Built an AI system predicting dropout risk and recommending personalized study habits using Machine Learning."
+            description: [
+                "Built an AI-based Student Study Habit Recommender System using a hybrid ML pipeline (Random Forest and K-Means clustering) trained on 8000+ student records.",
+                "Exposed trained models as Flask REST APIs to deliver real-time predictions and personalized recommendations consumed by a web front-end.",
+                "Managed source control and CI workflow with Git; authored API documentation and model-evaluation reports."
+            ]
         },
         {
-            title: "Bachelor of Engineering (CSE)",
-            institution: "EWIT, Bengaluru",
+            title: "B.E. (Computer Science & Engineering)",
+            institution: "East West Institute of Technology, Bengaluru, Karnataka",
             period: "2022 - 2026",
-            description: "CGPA: 8.12/10. Focused on strong fundamentals in DSA, DBMS, and AI/ML."
+            description: [
+                "CGPA: 8.19 / 10",
+                "Focused on strong CS fundamentals, AI/ML, and Software Development."
+            ]
         },
         {
             title: "PUC (PCMB)",
-            institution: "Smt. Vidhya P Hanchinmani",
+            institution: "Smt. Vidhya P Hanchinmani PU College, Dharwad, Karnataka",
             period: "2020 - 2022",
-            description: "Completed Pre-University Course. Scored 89%."
+            description: [
+                "Score: 89%",
+                "Pre-University Course in Physics, Chemistry, Mathematics, and Biology."
+            ]
+        },
+        {
+            title: "SSLC",
+            institution: "SJBVP Hosahalli, Gadag, Karnataka",
+            period: "2020",
+            description: [
+                "Score: 84.16%",
+                "Secondary School Leaving Certificate."
+            ]
         }
     ];
 
@@ -39,9 +52,9 @@ const Journey = () => {
                     viewport={{ once: true }}
                     className="mb-16"
                 >
-                    <h3 className="text-gray-500 text-xs tracking-[0.2em] uppercase mb-2 font-semibold">Experience</h3>
+                    <h3 className="text-gray-500 text-xs tracking-[0.2em] uppercase mb-2 font-semibold">Experience & Education</h3>
                     <h2 className="text-3xl md:text-4xl font-heading font-bold text-white">
-                        Experience
+                        My Journey
                     </h2>
                 </motion.div>
 
@@ -73,9 +86,13 @@ const Journey = () => {
                                 {/* Card */}
                                 <div className="flex-1 glass-card p-5 md:p-6 hover:border-primary/30 transition-colors">
                                     <div className="md:hidden text-primary text-xs font-medium mb-2">{exp.period}</div>
-                                    <h4 className="text-white font-bold mb-1">{exp.title}</h4>
-                                    <div className="text-gray-400 text-sm mb-2">{exp.institution}</div>
-                                    <p className="text-gray-500 text-sm leading-relaxed">{exp.description}</p>
+                                    <h4 className="text-white font-bold mb-1 text-base">{exp.title}</h4>
+                                    <div className="text-gray-400 text-sm mb-3">{exp.institution}</div>
+                                    <ul className="list-disc ml-4 space-y-1.5 text-gray-400 text-sm leading-relaxed">
+                                        {exp.description.map((bullet, bIdx) => (
+                                            <li key={bIdx}>{bullet}</li>
+                                        ))}
+                                    </ul>
                                 </div>
                             </motion.div>
                         ))}

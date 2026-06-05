@@ -4,28 +4,28 @@ import { motion } from 'framer-motion';
 
 const projects = [
     {
-        title: 'Fruit Classification',
-        description: 'A deep learning model utilizing Convolutional Neural Networks to classify various fruit images with high accuracy. Implemented using TensorFlow and Keras.',
-        tags: ['Python', 'TensorFlow', 'CNN'],
-        link: 'https://github.com/shreedhar1008/Fruit-Classification-using-CNN'
-    },
-    {
-        title: 'DeepFake Detection',
-        description: 'Advanced AI system designed to detect manipulated media and DeepFakes. Uses ensemble learning techniques to analyze facial artifacts and inconsistencies.',
-        tags: ['Python', 'PyTorch', 'AI Security'],
+        title: 'DeepFake Detection System',
+        description: 'B.E. Final-Year Project: Built a CNN + LSTM pipeline that analyses temporal video sequences to identify manipulated frames, facial inconsistencies, and abnormal motion patterns, achieving 89% detection accuracy on 500+ test videos. Developed a parallel NLP authenticity module to flag AI-generated text, reducing combined false-positive rate by 11%.',
+        tags: ['Python', 'TensorFlow', 'OpenCV', 'NLTK', 'Scikit-learn', 'CNN + LSTM'],
         link: 'https://github.com/shreedhar1008'
     },
     {
-        title: 'StudyTrack',
-        description: 'An AI-based system that predicts student dropout risk and recommends personalized study habits by analyzing academic and behavioral data using machine learning techniques.',
-        tags: ['Python', 'Machine Learning', 'Flask'],
-        link: 'https://github.com/shreedhar1008/StudyTrack_Ai-Based-Student-Study-Habit-Recommender'
+        title: 'Nomad AI - Personal Travel Assistant',
+        description: 'Personal Project: Built and deployed a full-stack AI travel planner using Google Gemini 2.0 Flash with Search Grounding to generate structured, real-time day-by-day itineraries tailored to destination, budget, and interests. Shipped a dark-mode Glassmorphism UI with Google Maps links and Lucide React icons.',
+        tags: ['React', 'Gemini 2.0 Flash', 'Tailwind CSS v4', 'Vite', 'Google Maps'],
+        link: 'https://github.com/shreedhar1008/AI-Trip-Planner'
     },
     {
-        title: 'AI Trip Planner',
-        description: "Built an AI-powered Trip Planner that creates personalized itineraries using user location, preferences, and trip duration. Integrated Google Maps for navigation.",
-        tags: ['Generative AI', 'React', 'Google Maps'],
-        link: 'https://github.com/shreedhar1008/AI-Trip-Planner'
+        title: 'Fruit Classification Using CNN',
+        description: 'B.E. Academic Project: Trained a CNN model on 10,000+ images across multiple fruit categories using data augmentation and preprocessing, achieving 90% test accuracy outperforming a non-augmented baseline by 12%. Built an end-to-end pipeline covering data ingestion, training, evaluation, and reporting.',
+        tags: ['Python', 'TensorFlow', 'OpenCV', 'NumPy', 'Matplotlib', 'CNN'],
+        link: 'https://github.com/shreedhar1008/Fruit-Classification-using-CNN'
+    },
+    {
+        title: 'StudyTrack Student Habit Recommender',
+        description: 'Infosys Springboard Intern Project: Built an AI-based study habit recommender system using a hybrid ML pipeline (Random Forest and K-Means clustering) trained on 8000+ student records. Exposed the trained models as a Flask REST API to deliver real-time personalized study recommendations.',
+        tags: ['Python', 'Machine Learning', 'Flask', 'REST API', 'Git'],
+        link: 'https://github.com/shreedhar1008/StudyTrack_Ai-Based-Student-Study-Habit-Recommender'
     }
 ];
 

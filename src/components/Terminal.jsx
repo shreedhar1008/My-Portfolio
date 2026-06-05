@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 
 const commands = {
     help: "Available commands: help, about, skills, projects, contact, clear",
-    about: "Shreedhar Shiragur - CS Engineer specializing in AI/ML and Cloud Computing. Passionate about building intelligent systems.",
-    skills: "Python-centric full-stack & ML developer | DSA, DBMS, OS | Flask & React.js | NumPy, Pandas, Matplotlib, Scikit-learn, TensorFlow, PyTorch | SQL (MySQL), MongoDB, Firebase | Git, VS Code, Jupyter | Linux & Windows | GCP & AWS",
-    projects: "1. Fruit Classification (CNN) - High accuracy fruit recognition.\n2. DeepFake Detection - AI security system.\n3. StudyTrack - Student performance tracking with dropout prediction system and provides personalized study habit recommendations using machine learning.",
-    contact: "Email: shreedharshiragur@gmail.com\nLinkedIn: linkedin.com/in/shreedhar\nGitHub: github.com/shreedhar",
+    about: "Shreedhar Shiragur - Computer Science graduate with a strong foundation in AI/ML and software development. Passionate about building intelligent systems that solve real-world problems.",
+    skills: "Languages: Python, JavaScript, SQL (MySQL), HTML5, CSS3, Java\nAI / ML: TensorFlow, Keras, PyTorch, Scikit-learn, OpenCV, NLTK, Pandas, NumPy, Matplotlib\nWeb / Backend: React.js, Flask, REST APIs, Firebase\nCloud & Tools: GCP, AWS, Git, Jupyter, VS Code, Vite\nCS Fundamentals: DSA, DBMS, OS, Linux",
+    projects: "1. DeepFake Detection System (CNN + LSTM, 89% accuracy Final-Year project)\n2. Nomad AI - Personal Travel Assistant (Gemini 2.0 Flash, React, Glassmorphism)\n3. Fruit Classification Using CNN (TensorFlow, OpenCV, Data Augmentation)\n4. StudyTrack Student Habit Recommender (Python, Random Forest, Flask REST API)",
+    contact: "Email: shreedharshiragur@gmail.com\nLinkedIn: linkedin.com/in/shreedhar-shiragur-0a8926291\nGitHub: github.com/shreedhar1008\nPhone: +91-9019981312",
     clear: "CLEAR"
 };
 

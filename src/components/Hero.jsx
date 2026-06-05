@@ -30,15 +30,15 @@ const Hero = () => {
                 transition={{ delay: 0.3, duration: 0.8 }}
                 className="text-center max-w-2xl"
             >
-                <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold font-heading mb-6 tracking-tight leading-[1.1] text-white">
-                    Building things<br />
-                    for the web.
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-heading mb-6 tracking-tight leading-[1.1] text-white">
+                    Developing Intelligent<br />
+                    AI/ML & Software Solutions
                 </h1>
 
                 <p className="text-lg md:text-xl text-gray-400 mb-10 font-light">
                     <span className="text-gray-200 font-medium">Shreedhar Shiragur</span>
                     <span className="mx-3 text-white/20">|</span>
-                    Software Engineer
+                    AI/ML Engineer & Software Developer
                 </p>
 
                 <motion.div
