@@ -31,14 +31,14 @@ const projects = [
 
 const Projects = () => {
     return (
-        <section id="projects" className="py-20 relative">
+        <section id="projects" className="py-12 md:py-20 relative">
             <div className="max-w-5xl mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true }}
-                    className="mb-12"
+                    className="mb-8 md:mb-12"
                 >
                     <h3 className="font-label text-xs tracking-[0.2em] uppercase mb-2 font-semibold text-primary">Projects</h3>
                     <h2 className="text-3xl md:text-5xl font-heading font-extrabold text-white">
@@ -46,7 +46,7 @@ const Projects = () => {
                     </h2>
                 </motion.div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                     {projects.map((project, index) => (
                         <ProjectCard key={index} index={index} {...project} />
                     ))}

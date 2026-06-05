@@ -43,14 +43,14 @@ const Journey = () => {
     ];
 
     return (
-        <section id="journey" className="py-20 relative">
+        <section id="journey" className="py-12 md:py-20 relative">
             <div className="max-w-5xl mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true }}
-                    className="mb-16"
+                    className="mb-8 md:mb-16"
                 >
                     <h3 className="font-label text-xs tracking-[0.2em] uppercase mb-2 font-semibold text-primary">Experience & Education</h3>
                     <h2 className="text-3xl md:text-5xl font-heading font-extrabold text-white">
@@ -63,7 +63,7 @@ const Journey = () => {
                     {/* Timeline Line */}
                     <div className="absolute left-[15px] md:left-[140px] top-0 bottom-0 w-px bg-gradient-to-b from-primary via-secondary to-transparent" />
 
-                    <div className="space-y-10">
+                    <div className="space-y-6 md:space-y-10">
                         {experiences.map((exp, index) => (
                             <motion.div
                                 key={index}

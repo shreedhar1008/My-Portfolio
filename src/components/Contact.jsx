@@ -4,17 +4,17 @@ import { FaEnvelope, FaLinkedin, FaGithub, FaMobile } from 'react-icons/fa';
 
 const Contact = () => {
     return (
-        <section id="contact" className="py-20 relative">
+        <section id="contact" className="py-12 md:py-20 relative">
             <div className="max-w-lg mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true }}
-                    className="text-center mb-10"
+                    className="text-center mb-8"
                 >
                     <h3 className="font-label text-xs tracking-[0.2em] uppercase mb-2 font-semibold text-primary">Contact</h3>
-                    <h2 className="text-3xl md:text-5xl font-heading font-extrabold text-white mb-8">
+                    <h2 className="text-3xl md:text-5xl font-heading font-extrabold text-white mb-6">
                         Get In Touch
                     </h2>
 

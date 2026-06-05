@@ -26,9 +26,9 @@ const skillCategories = [
 
 const About = () => {
     return (
-        <section className="py-20 relative">
+        <section className="py-12 md:py-20 relative">
             <div className="max-w-5xl mx-auto px-6">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
                     {/* About Content */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
