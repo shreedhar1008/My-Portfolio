@@ -34,11 +34,11 @@ const About = () => {
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0.2 }}
                         className="lg:col-span-5"
                     >
                         <h3 className="font-label text-xs tracking-[0.2em] uppercase mb-4 font-semibold text-primary">About</h3>
-                        <div className="glass-card p-6 md:p-8 sticky top-28">
+                        <div className="glass-card p-6 md:p-8">
                             <p className="font-body text-on-surface-variant leading-relaxed text-sm">
                                 Shreedhar Shiragur is a Computer Science graduate with a strong foundation in AI/ML and software development, passionate about building intelligent systems that solve real-world problems.
                                 <br /><br />
@@ -54,7 +54,7 @@ const About = () => {
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.15 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0.2 }}
                         className="lg:col-span-7"
                     >
                         <h3 className="font-label text-xs tracking-[0.2em] uppercase mb-4 font-semibold text-primary">Skills & Expertise</h3>
@@ -65,7 +65,7 @@ const About = () => {
                                     initial={{ opacity: 0, x: 20 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.4, delay: index * 0.08 }}
-                                    viewport={{ once: true }}
+                                    viewport={{ once: true, amount: 0.2 }}
                                     className="glass-card p-5 hover:border-primary/20 transition-all duration-300"
                                 >
                                     <h4 className="font-label text-xs font-bold uppercase tracking-wider mb-3 text-secondary">

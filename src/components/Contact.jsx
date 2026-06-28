@@ -10,7 +10,7 @@ const Contact = () => {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.2 }}
                     className="text-center mb-8"
                 >
                     <h3 className="font-label text-xs tracking-[0.2em] uppercase mb-2 font-semibold text-primary">Contact</h3>
@@ -42,7 +42,7 @@ const Contact = () => {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.15 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.2 }}
                     className="glass-card p-6 md:p-8"
                 >
                     <form className="flex flex-col gap-4">

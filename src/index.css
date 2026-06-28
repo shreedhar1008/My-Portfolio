@@ -6,7 +6,9 @@
   html {
     font-size: 18px;
     background-color: #051424;
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth — REMOVED: hijacks all scroll events onto the main
+       thread, causing severe lag when combined with WebGL + backdrop-filter.
+       react-scroll already handles smooth nav-click scrolling via JS. */
   }
 
   body {
@@ -17,8 +19,10 @@
 
 @layer components {
   .glass-card {
-    background: rgba(10, 15, 30, 0.6);
-    backdrop-filter: blur(12px);
+    background: rgba(10, 15, 30, 0.88);
+    /* backdrop-filter: blur(12px) — REMOVED: 12+ elements with blur forces
+       GPU to render-to-offscreen-buffer + Gaussian blur per composite frame.
+       Higher opacity compensates visually. */
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
     border-radius: 0.5rem; /* Consistent 8px radius from specs */

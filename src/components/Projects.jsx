@@ -37,7 +37,7 @@ const Projects = () => {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.2 }}
                     className="mb-8 md:mb-12"
                 >
                     <h3 className="font-label text-xs tracking-[0.2em] uppercase mb-2 font-semibold text-primary">Projects</h3>

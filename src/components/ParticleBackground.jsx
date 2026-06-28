@@ -153,13 +153,22 @@ const ParticleBackground = () => {
 
         window.addEventListener('mousemove', handleMouseMove);
 
+        const TARGET_FPS = 30;
+        const FRAME_INTERVAL = 1000 / TARGET_FPS;
+        let lastFrameTime = 0;
+
         const render = (time) => {
+            animationFrameId = requestAnimationFrame(render);
+
+            const delta = time - lastFrameTime;
+            if (delta < FRAME_INTERVAL) return; // skip frame to stay at 30fps
+            lastFrameTime = time - (delta % FRAME_INTERVAL);
+
             gl.viewport(0, 0, canvas.width, canvas.height);
             gl.uniform1f(uTime, time * 0.001);
             gl.uniform2f(uResolution, canvas.width, canvas.height);
             gl.uniform2f(uMouse, mouse.x, mouse.y);
             gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-            animationFrameId = requestAnimationFrame(render);
         };
 
         animationFrameId = requestAnimationFrame(render);
@@ -176,7 +185,8 @@ const ParticleBackground = () => {
     }, []);
 
     return (
-        <div className="fixed inset-0 z-0 pointer-events-none opacity-45">
+        <div className="fixed inset-0 z-0 pointer-events-none opacity-45"
+             style={{ willChange: 'transform', contain: 'strict' }}>
             <canvas ref={canvasRef} className="w-full h-full block" />
         </div>
     );

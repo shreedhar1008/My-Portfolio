@@ -8,10 +8,17 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
+        let ticking = false;
         const handleScroll = () => {
-            setScrolled(window.scrollY > 20);
+            if (!ticking) {
+                ticking = true;
+                requestAnimationFrame(() => {
+                    setScrolled(window.scrollY > 20);
+                    ticking = false;
+                });
+            }
         };
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
@@ -25,7 +32,7 @@ const Navbar = () => {
     return (
         <header className={`sticky top-0 left-0 w-full z-50 transition-all duration-300 ${
             scrolled 
-                ? 'bg-surface/80 backdrop-blur-xl border-b border-white/10 shadow-xl' 
+                ? 'bg-[#051424]/95 border-b border-white/10 shadow-xl' 
                 : 'bg-transparent border-b border-transparent'
         }`}>
             <div className="flex justify-between items-center w-full px-6 py-4 max-w-5xl mx-auto">

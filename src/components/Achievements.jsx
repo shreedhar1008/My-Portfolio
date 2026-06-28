@@ -29,7 +29,7 @@ const Achievements = () => {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.2 }}
                     className="mb-8 md:mb-12"
                 >
                     <h3 className="font-label text-xs tracking-[0.2em] uppercase mb-2 font-semibold text-center text-primary">Achievements</h3>
@@ -45,7 +45,7 @@ const Achievements = () => {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: true, amount: 0.2 }}
                             whileHover={{ y: -5 }}
                             className="group glass-card p-6 flex flex-col items-start gap-4 transition-all duration-300"
                         >

@@ -49,7 +49,7 @@ const Journey = () => {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.2 }}
                     className="mb-8 md:mb-16"
                 >
                     <h3 className="font-label text-xs tracking-[0.2em] uppercase mb-2 font-semibold text-primary">Experience & Education</h3>
@@ -70,7 +70,7 @@ const Journey = () => {
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                                viewport={{ once: true }}
+                                viewport={{ once: true, amount: 0.2 }}
                                 className="relative flex items-start gap-4 md:gap-0"
                             >
                                 {/* Date - left side on desktop */}

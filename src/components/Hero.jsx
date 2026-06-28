@@ -22,6 +22,11 @@ const Hero = () => {
                             src="/profile.jpg" 
                             alt="Shreedhar Shiragur" 
                             className="w-full h-full object-cover"
+                            width={192}
+                            height={192}
+                            loading="eager"
+                            fetchPriority="high"
+                            decoding="async"
                         />
                     </div>
                 </div>
