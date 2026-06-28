@@ -7,20 +7,40 @@ const skillCategories = [
         skills: ["Python", "JavaScript", "SQL (MySQL)", "HTML5", "CSS3", "Java"]
     },
     {
-        title: "AI / ML",
-        skills: ["TensorFlow", "Keras", "PyTorch", "Scikit-learn", "OpenCV", "NLTK", "Pandas", "NumPy", "Matplotlib"]
+        title: "Databases",
+        skills: ["MySQL", "PostgreSQL", "MongoDB", "SQLite", "Firebase"]
+    },
+    {
+        title: "AI / ML Frameworks",
+        skills: ["TensorFlow", "Keras", "PyTorch", "Scikit-learn", "OpenCV", "NLTK"]
+    },
+    {
+        title: "Generative AI & LLMs",
+        skills: ["LangChain", "RAG Pipelines", "Google Gemini API", "Prompt Engineering", "Generative AI"]
+    },
+    {
+        title: "Classical ML",
+        skills: ["Random Forest", "K-Means Clustering", "Decision Trees", "Data Augmentation"]
+    },
+    {
+        title: "Deep Learning & RL",
+        skills: ["CNNs", "LSTMs", "Reinforcement Learning", "Neural Networks"]
+    },
+    {
+        title: "Data Science",
+        skills: ["Pandas", "NumPy", "Matplotlib", "Statistical Analysis", "Jupyter Notebook"]
     },
     {
         title: "Web / Backend",
-        skills: ["React.js", "Flask", "REST APIs", "Firebase"]
+        skills: ["React.js", "Flask", "REST APIs", "Firebase", "Vite"]
     },
     {
         title: "Cloud & Tools",
-        skills: ["Google Cloud Platform", "AWS", "Git", "Jupyter Notebook", "VS Code", "Vite"]
+        skills: ["Google Cloud Platform (GCP)", "AWS", "Git", "Jupyter Notebook", "Docker (Basic)", "VS Code", "Linux"]
     },
     {
         title: "CS Fundamentals",
-        skills: ["Data Structures & Algorithms", "DBMS", "Operating Systems", "Linux"]
+        skills: ["Data Structures & Algorithms", "DBMS", "Operating Systems"]
     }
 ];
 
