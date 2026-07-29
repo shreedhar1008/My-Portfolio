@@ -53,33 +53,6 @@ Try typing these commands in the terminal mockup:
 
 ---
 
-## ⚙️ Running Locally
-
-Follow these steps to run the portfolio website on your local machine:
-
-### 1. Clone the repository
-```bash
-git clone https://github.com/shreedhar1008/My-Portfolio.git
-cd My-Portfolio
-```
-
-### 2. Install dependencies
-```bash
-npm install
-```
-
-### 3. Start the local development server
-```bash
-npm run dev
-```
-
-### 4. Build for production
-```bash
-npm run build
-```
-
----
-
 ## 📂 Project Directory Structure
 
 ```text
