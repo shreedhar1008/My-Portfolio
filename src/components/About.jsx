@@ -62,7 +62,7 @@ const About = () => {
                             <p className="font-body text-on-surface-variant leading-relaxed text-sm">
                                 Shreedhar Shiragur is a Computer Science graduate with a strong foundation in AI/ML and software development, passionate about building intelligent systems that solve real-world problems.
                                 <br /><br />
-                                He has hands-on experience in designing and delivering end-to-end software and machine learning solutions—from data ingestion to deployment, achieving measurable performance gains.
+                                He has hands-on experience in designing and delivering end-to-end software and machine learning solutions-from data ingestion to deployment, achieving measurable performance gains.
                                 <br /><br />
                                 Highly motivated and eager to bring technical depth, structural fundamentals, and a problem-solving mindset to challenging AI/ML, Data Science, or Software Development roles.
                             </p>

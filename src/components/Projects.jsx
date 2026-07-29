@@ -10,10 +10,10 @@ const projects = [
         link: 'https://github.com/shreedhar1008'
     },
     {
-        title: 'Nomad AI - Personal Travel Assistant',
-        description: 'Personal Project: Built and deployed a full-stack AI travel planner using Google Gemini 2.0 Flash with Search Grounding to generate structured, real-time day-by-day itineraries tailored to destination, budget, and interests. Shipped a dark-mode Glassmorphism UI with Google Maps links and Lucide React icons.',
-        tags: ['React', 'Gemini 2.0 Flash', 'Tailwind CSS v4', 'Vite', 'Google Maps'],
-        link: 'https://github.com/shreedhar1008/AI-Trip-Planner'
+        title: 'Voyage - Agentic Travel Planner',
+        description: 'Personal Project: Developed a full-stack travel planning application that generates personalized itineraries using Gemini API. Features a mobile-responsive UI with interactive Leaflet maps, JWT-based secure user authentication, and profile settings. Engineered end-to-end utilizing entirely cost-free third-party APIs.',
+        tags: ['React', 'Node.js', 'Express', 'MongoDB', 'Gemini API', 'Tailwind CSS v4', 'Leaflet'],
+        link: 'https://github.com/shreedhar1008/Voyage-Agentic_Travel_Planner'
     },
     {
         title: 'Fruit Classification Using CNN',
