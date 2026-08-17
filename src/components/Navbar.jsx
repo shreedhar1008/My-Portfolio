@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { HiMenu, HiX } from 'react-icons/hi';
@@ -6,8 +6,9 @@ import { HiMenu, HiX } from 'react-icons/hi';
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
-    const [scrollProgress, setScrollProgress] = useState(0);
     const [activeSection, setActiveSection] = useState('hero');
+    const progressBarRef = useRef(null);
+    const scrolledRef = useRef(false);
 
     useEffect(() => {
         let ticking = false;
@@ -15,12 +16,19 @@ const Navbar = () => {
             if (!ticking) {
                 ticking = true;
                 requestAnimationFrame(() => {
-                    setScrolled(window.scrollY > 20);
+                    const scrollY = window.scrollY;
+                    const isScrolledNow = scrollY > 20;
+
+                    if (scrolledRef.current !== isScrolledNow) {
+                        scrolledRef.current = isScrolledNow;
+                        setScrolled(isScrolledNow);
+                    }
                     
-                    // Calculate scroll progress percentage
-                    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-                    if (totalHeight > 0) {
-                        setScrollProgress((window.scrollY / totalHeight) * 100);
+                    // Directly update progress bar style without triggering React re-renders during scroll
+                    if (progressBarRef.current) {
+                        const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+                        const progress = totalHeight > 0 ? (scrollY / totalHeight) * 100 : 0;
+                        progressBarRef.current.style.width = `${progress}%`;
                     }
 
                     ticking = false;
@@ -43,10 +51,11 @@ const Navbar = () => {
     return (
         <>
             {/* Top Reading Progress Bar */}
-            <div className="fixed top-0 left-0 right-0 h-[2px] z-[60] bg-transparent">
+            <div className="fixed top-0 left-0 right-0 h-[2px] z-[60] bg-transparent pointer-events-none">
                 <div 
-                    className="h-full bg-gradient-to-r from-primary via-secondary to-primary transition-all duration-150 ease-out shadow-[0_0_12px_rgba(96,165,250,0.8)]"
-                    style={{ width: `${scrollProgress}%` }}
+                    ref={progressBarRef}
+                    className="h-full bg-gradient-to-r from-primary via-secondary to-primary shadow-[0_0_12px_rgba(96,165,250,0.8)]"
+                    style={{ width: '0%' }}
                 />
             </div>
 

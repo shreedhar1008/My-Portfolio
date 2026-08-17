@@ -1,18 +1,35 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaArrowUp } from 'react-icons/fa';
 
 const ScrollToTop = () => {
     const [isVisible, setIsVisible] = useState(false);
-    const [scrollPercentage, setScrollPercentage] = useState(0);
+    const visibleRef = useRef(false);
+    const circleRef = useRef(null);
 
     useEffect(() => {
+        let ticking = false;
         const handleScroll = () => {
-            const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-            if (totalHeight > 0) {
-                const currentProgress = (window.scrollY / totalHeight) * 100;
-                setScrollPercentage(currentProgress);
-                setIsVisible(window.scrollY > 300);
+            if (!ticking) {
+                ticking = true;
+                requestAnimationFrame(() => {
+                    const scrollY = window.scrollY;
+                    const isVisibleNow = scrollY > 300;
+
+                    if (visibleRef.current !== isVisibleNow) {
+                        visibleRef.current = isVisibleNow;
+                        setIsVisible(isVisibleNow);
+                    }
+
+                    if (circleRef.current) {
+                        const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+                        const scrollPercentage = totalHeight > 0 ? (scrollY / totalHeight) * 100 : 0;
+                        const offset = 113.097 - (113.097 * scrollPercentage) / 100;
+                        circleRef.current.style.strokeDashoffset = offset;
+                    }
+
+                    ticking = false;
+                });
             }
         };
 
@@ -49,6 +66,7 @@ const ScrollToTop = () => {
                             strokeWidth="2.5"
                         />
                         <circle
+                            ref={circleRef}
                             cx="22"
                             cy="22"
                             r="18"
@@ -56,9 +74,8 @@ const ScrollToTop = () => {
                             stroke="#60a5fa"
                             strokeWidth="2.5"
                             strokeDasharray="113.097"
-                            strokeDashoffset={113.097 - (113.097 * scrollPercentage) / 100}
+                            strokeDashoffset="113.097"
                             strokeLinecap="round"
-                            className="transition-all duration-150"
                         />
                     </svg>
 

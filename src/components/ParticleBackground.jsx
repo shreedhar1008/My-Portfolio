@@ -7,14 +7,20 @@ const ParticleBackground = () => {
         const canvas = canvasRef.current;
         if (!canvas) return;
 
-        const gl = canvas.getContext('webgl', { powerPreference: 'low-power', antialias: false }) ||
-                   canvas.getContext('experimental-webgl');
+        const gl = canvas.getContext('webgl', { 
+            powerPreference: 'low-power', 
+            antialias: false,
+            depth: false,
+            stencil: false
+        }) || canvas.getContext('experimental-webgl');
         if (!gl) return;
 
         let animationFrameId;
+        const isTouch = window.matchMedia('(hover: none)').matches;
 
         const syncSize = () => {
-            const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+            // Cap DPR at 1.0 on touch/mobile for smooth 60fps scrolling
+            const dpr = isTouch ? 1.0 : Math.min(window.devicePixelRatio || 1, 1.25);
             const w = Math.floor((canvas.clientWidth || window.innerWidth) * dpr);
             const h = Math.floor((canvas.clientHeight || window.innerHeight) * dpr);
             if (canvas.width !== w || canvas.height !== h) {
@@ -54,9 +60,8 @@ const ParticleBackground = () => {
                 vec2 p = (uv - 0.5) * 2.0;
                 p.x *= u_resolution.x / u_resolution.y;
 
-                float t = u_time * 0.18;
+                float t = u_time * 0.16;
                 
-                // Deep midnight background with subtle blue vignetting
                 vec3 bgDark = vec3(0.012, 0.027, 0.07);
                 vec3 bgGlow = vec3(0.025, 0.055, 0.12);
                 vec3 color = mix(bgDark, bgGlow, 1.0 - length(p * 0.45));
@@ -76,7 +81,7 @@ const ParticleBackground = () => {
                         float pulse = 0.5 + 0.5 * sin(u_time * 1.5 + h * 6.283);
                         
                         float node = smoothstep(0.045, 0.01, d);
-                        color += node * vec3(0.38, 0.65, 0.98) * pulse * 0.55; // Electric blue nodes
+                        color += node * vec3(0.38, 0.65, 0.98) * pulse * 0.55;
 
                         for(float y2 = -1.0; y2 <= 1.0; y2++) {
                             for(float x2 = -1.0; x2 <= 1.0; x2++) {
@@ -87,13 +92,12 @@ const ParticleBackground = () => {
                                 
                                 float dist_to_line = length(f_uv - mix(node_p, node_p2, clamp(dot(f_uv - node_p, node_p2 - node_p) / dot(node_p2 - node_p, node_p2 - node_p), 0.0, 1.0)));
                                 float line = smoothstep(0.009, 0.0, dist_to_line) * smoothstep(1.4, 0.4, length(node_p - node_p2));
-                                color += line * vec3(0.68, 0.45, 0.95) * 0.12; // Amethyst constellation lines
+                                color += line * vec3(0.68, 0.45, 0.95) * 0.12;
                             }
                         }
                     }
                 }
 
-                // Interactive mouse ambient spotlight
                 vec2 mouse = u_mouse / u_resolution;
                 float mouse_dist = length(uv - mouse);
                 color += (smoothstep(0.35, 0.0, mouse_dist) * 0.08) * vec3(0.38, 0.65, 0.98);
@@ -156,9 +160,11 @@ const ParticleBackground = () => {
             }
         };
 
-        window.addEventListener('mousemove', handleMouseMove, { passive: true });
+        if (!isTouch) {
+            window.addEventListener('mousemove', handleMouseMove, { passive: true });
+        }
 
-        const TARGET_FPS = 30;
+        const TARGET_FPS = isTouch ? 24 : 30;
         const FRAME_INTERVAL = 1000 / TARGET_FPS;
         let lastFrameTime = 0;
 
@@ -181,7 +187,9 @@ const ParticleBackground = () => {
         return () => {
             cancelAnimationFrame(animationFrameId);
             resizeObserver.disconnect();
-            window.removeEventListener('mousemove', handleMouseMove);
+            if (!isTouch) {
+                window.removeEventListener('mousemove', handleMouseMove);
+            }
             gl.deleteBuffer(positionBuffer);
             gl.deleteProgram(program);
             gl.deleteShader(vs);
@@ -190,8 +198,8 @@ const ParticleBackground = () => {
     }, []);
 
     return (
-        <div className="fixed inset-0 z-0 pointer-events-none opacity-50"
-             style={{ willChange: 'transform', contain: 'strict' }}>
+        <div className="fixed inset-0 z-0 pointer-events-none opacity-45"
+             style={{ willChange: 'transform', transform: 'translateZ(0)', contain: 'strict' }}>
             <canvas ref={canvasRef} className="w-full h-full block" />
         </div>
     );
