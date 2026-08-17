@@ -4,64 +4,175 @@
 
 @layer base {
   html {
-    font-size: 18px;
-    background-color: #051424;
-    /* scroll-behavior: smooth — REMOVED: hijacks all scroll events onto the main
-       thread, causing severe lag when combined with WebGL + backdrop-filter.
-       react-scroll already handles smooth nav-click scrolling via JS. */
+    font-size: 16px;
+    background-color: #030712;
+    color-scheme: dark;
   }
 
   body {
     @apply font-body bg-dark antialiased;
-    color: #c2c6d6;
+    color: #94a3b8;
+    background-color: #030712;
+    overflow-x: hidden;
+  }
+
+  /* Custom Selection */
+  ::selection {
+    background-color: rgba(96, 165, 250, 0.3);
+    color: #ffffff;
   }
 }
 
 @layer components {
+  /* Premium Glassmorphic Card */
   .glass-card {
-    background: rgba(10, 15, 30, 0.88);
-    /* backdrop-filter: blur(12px) — REMOVED: 12+ elements with blur forces
-       GPU to render-to-offscreen-buffer + Gaussian blur per composite frame.
-       Higher opacity compensates visually. */
+    background: rgba(10, 18, 38, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+    border-radius: 0.875rem;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .glass-card-interactive {
+    background: rgba(10, 18, 38, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-    border-radius: 0.5rem; /* Consistent 8px radius from specs */
-    transition: all 0.3s ease;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border-radius: 0.875rem;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .glass-card:hover {
-    background: rgba(10, 15, 30, 0.85);
-    border-color: rgba(173, 198, 255, 0.3); /* electric blue border glow */
-    box-shadow: 0 8px 32px rgba(173, 198, 255, 0.15);
+  .glass-card-interactive:hover {
+    background: rgba(14, 25, 52, 0.8);
+    border-color: rgba(96, 165, 250, 0.35);
+    box-shadow: 0 16px 40px -10px rgba(96, 165, 250, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transform: translateY(-4px);
   }
 
+  /* Floating Island Nav */
   .glass-nav {
-    @apply bg-dark/60 backdrop-blur-xl border-b border-white/10 shadow-lg;
+    background: rgba(4, 9, 23, 0.78);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    box-shadow: 0 12px 36px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
+  /* Text Gradients */
   .text-gradient {
-    background: linear-gradient(135deg, #adc6ff, #d2bbff);
+    background: linear-gradient(135deg, #60a5fa 0%, #93c5fd 40%, #c084fc 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    padding-bottom: 12px;
-    margin-bottom: -12px;
+  }
+
+  .text-gradient-purple {
+    background: linear-gradient(135deg, #c084fc 0%, #e879f9 50%, #60a5fa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-silver {
+    background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Gradient Button with Animated Glow */
+  .btn-gradient-primary {
+    background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.35);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-gradient-primary:hover {
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.55);
+    transform: translateY(-2px);
+  }
+
+  .btn-gradient-primary:active {
+    transform: translateY(0);
+  }
+
+  /* Secondary Outline Button */
+  .btn-ghost-glow {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #f1f5f9;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .btn-ghost-glow:hover {
+    background: rgba(96, 165, 250, 0.1);
+    border-color: rgba(96, 165, 250, 0.4);
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba(96, 165, 250, 0.2);
+    transform: translateY(-2px);
+  }
+
+  /* Tech Skill Pill */
+  .tech-pill {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 0.35rem 0.75rem;
+    border-radius: 9999px;
+    background: rgba(96, 165, 250, 0.08);
+    color: #93c5fd;
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    transition: all 0.25s ease;
+  }
+
+  .tech-pill:hover {
+    background: rgba(96, 165, 250, 0.2);
+    border-color: rgba(96, 165, 250, 0.5);
+    color: #ffffff;
+    transform: translateY(-1px);
+  }
+
+  /* Terminal Scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(3, 7, 18, 0.4);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(96, 165, 250, 0.4);
   }
 }
 
-/* Custom Scrollbar */
+/* Global Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #051424;
+  background: #030712;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1c2b3c;
+  background: #1e293b;
   border-radius: 4px;
+  border: 2px solid #030712;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #adc6ff;
+  background: #3b82f6;
 }

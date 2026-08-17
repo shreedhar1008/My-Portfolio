@@ -7,14 +7,16 @@ const ParticleBackground = () => {
         const canvas = canvasRef.current;
         if (!canvas) return;
 
-        const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+        const gl = canvas.getContext('webgl', { powerPreference: 'low-power', antialias: false }) ||
+                   canvas.getContext('experimental-webgl');
         if (!gl) return;
 
         let animationFrameId;
 
         const syncSize = () => {
-            const w = canvas.clientWidth || window.innerWidth;
-            const h = canvas.clientHeight || window.innerHeight;
+            const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+            const w = Math.floor((canvas.clientWidth || window.innerWidth) * dpr);
+            const h = Math.floor((canvas.clientHeight || window.innerHeight) * dpr);
             if (canvas.width !== w || canvas.height !== h) {
                 canvas.width = w;
                 canvas.height = h;
@@ -35,7 +37,7 @@ const ParticleBackground = () => {
         `;
 
         const fsSource = `
-            precision highp float;
+            precision mediump float;
             uniform float u_time;
             uniform vec2 u_resolution;
             uniform vec2 u_mouse;
@@ -52,10 +54,14 @@ const ParticleBackground = () => {
                 vec2 p = (uv - 0.5) * 2.0;
                 p.x *= u_resolution.x / u_resolution.y;
 
-                float t = u_time * 0.2;
-                vec3 color = vec3(0.02, 0.04, 0.08); // Deep Navy background
+                float t = u_time * 0.18;
+                
+                // Deep midnight background with subtle blue vignetting
+                vec3 bgDark = vec3(0.012, 0.027, 0.07);
+                vec3 bgGlow = vec3(0.025, 0.055, 0.12);
+                vec3 color = mix(bgDark, bgGlow, 1.0 - length(p * 0.45));
 
-                float grid = 5.0;
+                float grid = 4.5;
                 vec2 g_uv = uv * grid;
                 vec2 id = floor(g_uv);
                 vec2 f_uv = fract(g_uv) - 0.5;
@@ -64,32 +70,33 @@ const ParticleBackground = () => {
                     for(float x = -1.0; x <= 1.0; x++) {
                         vec2 offs = vec2(x, y);
                         float h = hash(id + offs);
-                        vec2 node_p = offs + vec2(sin(t + h * 6.28), cos(t + h * 6.28)) * 0.4;
+                        vec2 node_p = offs + vec2(sin(t + h * 6.283), cos(t + h * 6.283)) * 0.38;
                         
                         float d = length(f_uv - node_p);
-                        float pulse = 0.5 + 0.5 * sin(u_time + h * 10.0);
+                        float pulse = 0.5 + 0.5 * sin(u_time * 1.5 + h * 6.283);
                         
-                        float node = smoothstep(0.05, 0.02, d);
-                        color += node * vec3(0.68, 0.78, 1.0) * pulse * 0.4; // Electric blue nodes (#adc6ff)
+                        float node = smoothstep(0.045, 0.01, d);
+                        color += node * vec3(0.38, 0.65, 0.98) * pulse * 0.55; // Electric blue nodes
 
                         for(float y2 = -1.0; y2 <= 1.0; y2++) {
                             for(float x2 = -1.0; x2 <= 1.0; x2++) {
                                 if(x == x2 && y == y2) continue;
                                 vec2 offs2 = vec2(x2, y2);
                                 float h2 = hash(id + offs2);
-                                vec2 node_p2 = offs2 + vec2(sin(t + h2 * 6.28), cos(t + h2 * 6.28)) * 0.4;
+                                vec2 node_p2 = offs2 + vec2(sin(t + h2 * 6.283), cos(t + h2 * 6.283)) * 0.38;
                                 
                                 float dist_to_line = length(f_uv - mix(node_p, node_p2, clamp(dot(f_uv - node_p, node_p2 - node_p) / dot(node_p2 - node_p, node_p2 - node_p), 0.0, 1.0)));
-                                float line = smoothstep(0.01, 0.0, dist_to_line) * smoothstep(1.5, 0.5, length(node_p - node_p2));
-                                color += line * vec3(0.82, 0.73, 1.0) * 0.1; // Violet connections (#d2bbff)
+                                float line = smoothstep(0.009, 0.0, dist_to_line) * smoothstep(1.4, 0.4, length(node_p - node_p2));
+                                color += line * vec3(0.68, 0.45, 0.95) * 0.12; // Amethyst constellation lines
                             }
                         }
                     }
                 }
 
+                // Interactive mouse ambient spotlight
                 vec2 mouse = u_mouse / u_resolution;
                 float mouse_dist = length(uv - mouse);
-                color += (smoothstep(0.3, 0.0, mouse_dist) * 0.05) * vec3(0.68, 0.78, 1.0);
+                color += (smoothstep(0.35, 0.0, mouse_dist) * 0.08) * vec3(0.38, 0.65, 0.98);
 
                 gl_FragColor = vec4(color, 1.0);
             }
@@ -100,7 +107,6 @@ const ParticleBackground = () => {
             gl.shaderSource(shader, source);
             gl.compileShader(shader);
             if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-                console.error(gl.getShaderInfoLog(shader));
                 gl.deleteShader(shader);
                 return null;
             }
@@ -116,7 +122,6 @@ const ParticleBackground = () => {
         gl.attachShader(program, fs);
         gl.linkProgram(program);
         if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
-            console.error(gl.getProgramInfoLog(program));
             return;
         }
 
@@ -151,7 +156,7 @@ const ParticleBackground = () => {
             }
         };
 
-        window.addEventListener('mousemove', handleMouseMove);
+        window.addEventListener('mousemove', handleMouseMove, { passive: true });
 
         const TARGET_FPS = 30;
         const FRAME_INTERVAL = 1000 / TARGET_FPS;
@@ -161,7 +166,7 @@ const ParticleBackground = () => {
             animationFrameId = requestAnimationFrame(render);
 
             const delta = time - lastFrameTime;
-            if (delta < FRAME_INTERVAL) return; // skip frame to stay at 30fps
+            if (delta < FRAME_INTERVAL) return;
             lastFrameTime = time - (delta % FRAME_INTERVAL);
 
             gl.viewport(0, 0, canvas.width, canvas.height);
@@ -185,7 +190,7 @@ const ParticleBackground = () => {
     }, []);
 
     return (
-        <div className="fixed inset-0 z-0 pointer-events-none opacity-45"
+        <div className="fixed inset-0 z-0 pointer-events-none opacity-50"
              style={{ willChange: 'transform', contain: 'strict' }}>
             <canvas ref={canvasRef} className="w-full h-full block" />
         </div>

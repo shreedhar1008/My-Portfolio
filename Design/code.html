@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shreedhar Shiragur | Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&amp;family=Inter:wght@400..700&amp;family=Space+Grotesk:wght@500&amp;family=JetBrains+Mono:wght@400&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-container": "#242939",
+                      "on-tertiary-fixed": "#161b2b",
+                      "on-secondary-fixed": "#25005a",
+                      "error-container": "#93000a",
+                      "inverse-on-surface": "#233143",
+                      "surface": "#051424",
+                      "on-error-container": "#ffdad6",
+                      "inverse-primary": "#005ac2",
+                      "on-secondary": "#3f008e",
+                      "on-secondary-container": "#c9aeff",
+                      "outline": "#8c909f",
+                      "surface-container-highest": "#273647",
+                      "surface-variant": "#273647",
+                      "primary-fixed-dim": "#adc6ff",
+                      "surface-tint": "#adc6ff",
+                      "on-primary-container": "#00285d",
+                      "error": "#ffb4ab",
+                      "tertiary-fixed-dim": "#c2c6db",
+                      "tertiary-container": "#8c90a4",
+                      "on-tertiary-fixed-variant": "#414658",
+                      "secondary-fixed": "#eaddff",
+                      "outline-variant": "#424754",
+                      "on-tertiary": "#2b3040",
+                      "on-surface-variant": "#c2c6d6",
+                      "surface-container-lowest": "#010f1f",
+                      "on-primary-fixed": "#001a42",
+                      "surface-dim": "#051424",
+                      "secondary": "#d2bbff",
+                      "surface-container-high": "#1c2b3c",
+                      "on-primary-fixed-variant": "#004395",
+                      "on-surface": "#d4e4fa",
+                      "on-error": "#690005",
+                      "primary-container": "#4d8eff",
+                      "inverse-surface": "#d4e4fa",
+                      "surface-container": "#122131",
+                      "surface-bright": "#2c3a4c",
+                      "primary-fixed": "#d8e2ff",
+                      "secondary-fixed-dim": "#d2bbff",
+                      "secondary-container": "#6001d1",
+                      "background": "#051424",
+                      "on-secondary-fixed-variant": "#5a00c6",
+                      "tertiary-fixed": "#dee1f7",
+                      "on-primary": "#002e6a",
+                      "surface-container-low": "#0d1c2d",
+                      "on-background": "#d4e4fa",
+                      "primary": "#adc6ff",
+                      "tertiary": "#c2c6db"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xl": "80px",
+                      "base": "8px",
+                      "md": "24px",
+                      "lg": "48px",
+                      "xs": "4px",
+                      "margin-desktop": "64px",
+                      "margin-mobile": "16px",
+                      "gutter": "24px",
+                      "max-width": "1280px",
+                      "sm": "12px"
+              },
+              "fontFamily": {
+                      "display-xl": [
+                              "Syne"
+                      ],
+                      "headline-lg": [
+                              "Syne"
+                      ],
+                      "display-lg": [
+                              "Syne"
+                      ],
+                      "headline-lg-mobile": [
+                              "Syne"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Space Grotesk"
+                      ],
+                      "code-sm": [
+                              "JetBrains Mono"
+                      ]
+              },
+              "fontSize": {
+                      "display-xl": [
+                              "72px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.04em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "code-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        
+        .glass-card {
+            background: rgba(10, 15, 30, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid transparent;
+            border-image: linear-gradient(to bottom right, rgba(255,255,255,0.2), rgba(255,255,255,0.05)) 1;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .glass-card:hover {
+            background: rgba(10, 15, 30, 0.8);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border-image: linear-gradient(to bottom right, rgba(255,255,255,0.3), rgba(255,255,255,0.1)) 1;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, theme('colors.primary'), theme('colors.secondary'));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .glow-btn {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .glow-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, theme('colors.primary'), theme('colors.secondary'));
+            filter: blur(20px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+            border-radius: inherit;
+        }
+        
+        .glow-btn:hover::before {
+            opacity: 0.5;
+        }
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="relative min-h-screen overflow-x-hidden selection:bg-primary/30 selection:text-primary">
+<!-- Fixed Background Shader -->
+<div class="fixed inset-0 z-0 pointer-events-none">
+<!-- STITCH_SHADER_START:ANIMATION_2 class="absolute inset-0 w-full h-full opacity-40" -->
+<div class="absolute inset-0 w-full h-full opacity-40" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_2" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_2');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+varying vec2 v_texCoord;
+
+float hash(vec2 p) {
+    p = fract(p * vec2(123.34, 456.21));
+    p += dot(p, p + 45.32);
+    return fract(p.x * p.y);
+}
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec2 p = (uv - 0.5) * 2.0;
+    p.x *= u_resolution.x / u_resolution.y;
+
+    float t = u_time * 0.2;
+    vec3 color = vec3(0.02, 0.04, 0.08); // Deep Navy background
+
+    // Neural Network Grid / Nodes
+    float grid = 5.0;
+    vec2 g_uv = uv * grid;
+    vec2 id = floor(g_uv);
+    vec2 f_uv = fract(g_uv) - 0.5;
+
+    for(float y = -1.0; y <= 1.0; y++) {
+        for(float x = -1.0; x <= 1.0; x++) {
+            vec2 offs = vec2(x, y);
+            float h = hash(id + offs);
+            vec2 node_p = offs + vec2(sin(t + h * 6.28), cos(t + h * 6.28)) * 0.4;
+            
+            float d = length(f_uv - node_p);
+            float pulse = 0.5 + 0.5 * sin(u_time + h * 10.0);
+            
+            // Draw nodes
+            float node = smoothstep(0.05, 0.02, d);
+            color += node * vec3(0.23, 0.51, 0.96) * pulse * 0.5; // Electric blue nodes
+
+            // Connections
+            for(float y2 = -1.0; y2 <= 1.0; y2++) {
+                for(float x2 = -1.0; x2 <= 1.0; x2++) {
+                    if(x == x2 && y == y2) continue;
+                    vec2 offs2 = vec2(x2, y2);
+                    float h2 = hash(id + offs2);
+                    vec2 node_p2 = offs2 + vec2(sin(t + h2 * 6.28), cos(t + h2 * 6.28)) * 0.4;
+                    
+                    // Line rendering logic (simplified for background)
+                    float dist_to_line = length(f_uv - mix(node_p, node_p2, clamp(dot(f_uv - node_p, node_p2 - node_p) / dot(node_p2 - node_p, node_p2 - node_p), 0.0, 1.0)));
+                    float line = smoothstep(0.01, 0.0, dist_to_line) * smoothstep(1.5, 0.5, length(node_p - node_p2));
+                    color += line * vec3(0.48, 0.23, 0.93) * 0.1; // Violet connections
+                }
+            }
+        }
+    }
+
+    // Add mouse glow
+    vec2 mouse = u_mouse / u_resolution;
+    float mouse_dist = length(uv - mouse);
+    color += (smoothstep(0.3, 0.0, mouse_dist) * 0.05) * vec3(0.23, 0.51, 0.96);
+
+    gl_FragColor = vec4(color, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_2 -->
+</div>
+<!-- TopAppBar Component -->
+<header class="sticky top-0 w-full bg-surface/60 dark:bg-surface/60 backdrop-blur-xl border-b border-white/10 shadow-xl z-50">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-max-width mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary dark:text-primary text-2xl cursor-pointer">menu</span>
+<span class="font-display-lg text-display-lg bg-gradient-to-br from-primary to-secondary bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(173,198,255,0.3)] rounded-lg">SS</span>
+</div>
+<nav class="hidden md:flex gap-8">
+<a class="font-label-md text-label-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#about">About</a>
+<a class="font-label-md text-label-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#projects">Projects</a>
+<a class="font-label-md text-label-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#experience">Experience</a>
+<a class="font-label-md text-label-md text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#contact">Contact</a>
+</nav>
+<span class="material-symbols-outlined text-primary dark:text-primary text-2xl cursor-pointer">light_mode</span>
+</div>
+</header>
+<main class="relative z-10">
+<!-- Hero Section -->
+<section class="min-h-[707px] flex flex-col justify-center items-center text-center px-margin-mobile md:px-margin-desktop py-xl">
+<div class="fade-up">
+<h1 class="font-display-xl text-display-xl mb-6">
+<span class="block text-on-surface">Shreedhar</span>
+<span class="block text-gradient">Shiragur</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-2xl mx-auto h-[30px]" id="typing-text"></p>
+<a class="glow-btn inline-block bg-gradient-to-r from-[#3b82f6] to-[#7c3aed] text-white font-label-md text-label-md py-4 px-8 rounded-full transition-transform hover:scale-105 active:scale-95 duration-200" href="#projects">
+                    View My Work
+                </a>
+</div>
+</section>
+<!-- About Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-xl max-w-max-width mx-auto" id="about">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-xl items-center fade-up">
+<div class="relative group mx-auto md:mx-0 w-64 h-64 md:w-80 md:h-80">
+<div class="absolute inset-0 rounded-full bg-gradient-to-tr from-primary to-secondary blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
+<div class="relative w-full h-full rounded-full border-2 border-primary/50 overflow-hidden glass-card p-2">
+<img alt="Profile" class="w-full h-full object-cover rounded-full" data-alt="A professional, high-quality portrait photograph of a young male software engineer. He has a modern, confident expression. The lighting is dramatic and moody, utilizing a cinematic cyberpunk or synthwave aesthetic with strong rim lighting in electric blue and vibrant violet, reflecting the portfolio's tech-forward, AI-laboratory theme. The background is a soft, out-of-focus dark space, emphasizing computational elegance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWY5zWyRc4Vvdp-qwYr5tOss09_NAy3Y1cKoY4dPM68bAJPzrY6phMnFwER5_R9znYLd1zq1jmlW92LDcShomlJO4sbX5K4Vc4LJtguoJ_0CzTFbx7c457UEonvD3M2h0BAukBZ-W88gRZNIqTRCoozuO2nHL6gb_aTjuZ0VN9hdyksTR2KgZfwpGC8zoud0Kg-_Loaj50qnX1X4e9aFc2iut67q_8yyO6z4nIEJB0MvraLpMJkbSKDppQsgb4Vn-M2nh8FW6xct0"/>
+</div>
+</div>
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-6 text-on-surface">About Me</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                        I am a recent B.E. CS graduate with a specialized focus in AI and Machine Learning. Passionate about solving complex problems, I blend deep learning techniques with robust full-stack development to create scalable, intelligent solutions.
+                    </p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="font-label-md text-label-md px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">Python</span>
+<span class="font-label-md text-label-md px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">TensorFlow</span>
+<span class="font-label-md text-label-md px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">React</span>
+<span class="font-label-md text-label-md px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">Flask</span>
+</div>
+<div class="flex gap-4">
+<div class="glass-card p-4 rounded-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-3xl">star</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface">HackerRank</p>
+<p class="font-body-md text-sm text-on-surface-variant">5-Star</p>
+</div>
+</div>
+<div class="glass-card p-4 rounded-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">cloud_done</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface">GCP</p>
+<p class="font-body-md text-sm text-on-surface-variant">40+ Badges</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-xl max-w-max-width mx-auto" id="projects">
+<h2 class="font-headline-lg text-headline-lg mb-12 text-center text-on-surface fade-up">Featured Projects</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Project Card 1 -->
+<div class="glass-card rounded-xl p-6 fade-up flex flex-col h-full transition-all duration-300">
+<div class="mb-4">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-2">DeepFake Detection System</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Advanced CNN architecture for real-time video manipulation detection.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="font-code-sm text-code-sm px-2 py-1 bg-surface-container rounded text-primary">PyTorch</span>
+<span class="font-code-sm text-code-sm px-2 py-1 bg-surface-container rounded text-primary">OpenCV</span>
+</div>
+</div>
+<div class="mt-auto flex gap-4">
+<a class="font-label-md text-label-md text-on-surface hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-sm">code</span> GitHub
+                        </a>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="glass-card rounded-xl p-6 fade-up flex flex-col h-full transition-all duration-300">
+<div class="mb-4">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-2">Voyage - Agentic Travel Planner</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Full-stack travel planner using Gemini API to generate structured itineraries with Leaflet maps.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="font-code-sm text-code-sm px-2 py-1 bg-surface-container rounded text-primary">React</span>
+<span class="font-code-sm text-code-sm px-2 py-1 bg-surface-container rounded text-primary">Node.js</span>
+<span class="font-code-sm text-code-sm px-2 py-1 bg-surface-container rounded text-primary">Gemini API</span>
+<span class="font-code-sm text-code-sm px-2 py-1 bg-surface-container rounded text-primary">Leaflet</span>
+</div>
+</div>
+<div class="mt-auto flex gap-4">
+<a class="font-label-md text-label-md text-on-surface hover:text-primary transition-colors flex items-center gap-1" href="https://github.com/shreedhar1008/Voyage-Agentic_Travel_Planner" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined text-sm">code</span> GitHub
+                        </a>
+<a class="font-label-md text-label-md text-on-surface hover:text-primary transition-colors flex items-center gap-1" href="https://trip-planner-nine-sepia.vercel.app" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined text-sm">open_in_new</span> Live Demo
+                        </a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="full-width py-lg bg-surface dark:bg-surface border-t border-outline-variant/30 mt-xl">
+<div class="flex flex-col md:flex-row justify-between items-center gap-md px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
+<span class="font-headline-lg text-headline-lg text-on-surface">SS</span>
+<div class="font-body-md text-body-md text-on-surface-variant">
+                © 2024 Shreedhar Shiragur. Built with Computational Elegance.
+            </div>
+<div class="flex gap-4">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-all duration-300 hover:translate-y-[-2px]" href="#">LinkedIn</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-all duration-300 hover:translate-y-[-2px]" href="#">GitHub</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-all duration-300 hover:translate-y-[-2px]" href="#">Email</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-all duration-300 hover:translate-y-[-2px]" href="#">Back to top</a>
+</div>
+</div>
+</footer>
+<script>
+        // Typing Effect
+        const roles = ["AI/ML Engineer", "Full-Stack Developer", "Problem Solver"];
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingElement = document.getElementById('typing-text');
+
+        function type() {
+            const currentRole = roles[roleIndex];
+            
+            if (isDeleting) {
+                typingElement.textContent = currentRole.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentRole.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = 100;
+            if (isDeleting) typeSpeed /= 2;
+
+            if (!isDeleting && charIndex === currentRole.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(type, typeSpeed);
+        }
+
+        setTimeout(type, 1000);
+
+        // Intersection Observer for fade-up animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+    </script>
+</body></html>
